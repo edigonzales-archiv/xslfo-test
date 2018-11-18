@@ -21,6 +21,15 @@ also removed unnecessary renderers as we are using pdf only.
         <font kerning="yes" embed-url="FrutigerLTCom-Black.ttf" encoding-mode="single-byte">
           <font-triplet name="Frutiger" style="normal" weight="700"/>
         </font>
+        <font kerning="yes" embed-url="FrutigerLTCom-BlackItalic.ttf" encoding-mode="single-byte">
+          <font-triplet name="Frutiger" style="italic" weight="700"/>
+        </font>
+        <font kerning="yes" embed-url="FrutigerLTCom-Roman.ttf" encoding-mode="single-byte">
+          <font-triplet name="Frutiger" style="normal" weight="400"/>
+        </font>
+        <font kerning="yes" embed-url="FrutigerLTCom-Italic.ttf" encoding-mode="single-byte">
+          <font-triplet name="Frutiger" style="italic" weight="400"/>
+        </font>
       </fonts>
     </renderer>
   </renderers>	
