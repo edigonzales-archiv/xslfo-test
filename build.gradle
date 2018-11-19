@@ -1,0 +1,18 @@
+plugins {
+    id 'com.github.eerohele.saxon-gradle' version '0.7.0'
+}
+
+import groovy.xml.*
+
+xslt {
+    stylesheet 'parcel_extract.xslt'
+    input 'parcel_extract.xml'
+    output 'parcel_extract.fo'
+}
+
+task prettyPrint(type: Exec) {
+    commandLine 'xmllint',  '--format',  'parcel_extract.fo', '-o', 'parcel_extract.fo'
+
+}
+
+//xslt.finalizedBy(prettyPrint)
