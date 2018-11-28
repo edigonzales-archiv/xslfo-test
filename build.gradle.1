@@ -5,9 +5,9 @@ plugins {
 import groovy.xml.*
 
 xslt {
-    stylesheet 'landuseplans_html_extract.xslt'
-    input 'CH970687433258.xml'
-    output 'CH970687433258.html'
+    stylesheet 'parcel_extract.xslt'
+    input 'parcel_extract.xml'
+    output 'parcel_extract.fo'
 }
 
 task prettyPrint(type: Exec) {

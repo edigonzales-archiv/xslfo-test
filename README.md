@@ -9,4 +9,8 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:Gedichte.xml -xsl:style0
 
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:parcel_extract.xml -xsl:parcel_extract.xslt -o:parcel_extract.fo
 xmllint --format parcel_extract.fo -o parcel_extract.fo
+
+
+java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH970687433258.xml -xsl:landuseplans_html_extract.xslt -o:CH970687433258.html
+
 ```
