@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <GetExtractByIdResponse xmlns="http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract" xmlns:ns2="http://schemas.geo.admin.ch/V_D/OeREB/1.0/ExtractData" xmlns:ns3="http://www.opengis.net/gml/3.2" xmlns:ns4="http://www.w3.org/1999/xlink">
   <ns2:Extract>
-    <ns2:CreationDate>2018-11-25T19:44:45.258+01:00</ns2:CreationDate>
+    <ns2:CreationDate>2018-11-29T20:06:21.355+01:00</ns2:CreationDate>
     <ns2:isReduced>true</ns2:isReduced>
     <ns2:RealEstate>
       <ns2:Number>360</ns2:Number>
@@ -33,7 +33,7 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:AreaShare>6042</ns2:AreaShare>
@@ -48,6 +48,10 @@
           </ns2:TextAtWeb>
           <ns2:Lawstatus>
             <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
           </ns2:Lawstatus>
           <ns2:Title>
             <ns2:LocalisedText>
@@ -81,6 +85,10 @@
           </ns2:TextAtWeb>
           <ns2:Lawstatus>
             <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
           </ns2:Lawstatus>
           <ns2:Title>
             <ns2:LocalisedText>
@@ -114,6 +122,10 @@
           </ns2:TextAtWeb>
           <ns2:Lawstatus>
             <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
           </ns2:Lawstatus>
           <ns2:Title>
             <ns2:LocalisedText>
@@ -158,63 +170,48 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:AreaShare>5276</ns2:AreaShare>
         <ns2:PartInPercent>87.322078781860312801654799841344356536865234375</ns2:PartInPercent>
-      </ns2:RestrictionOnLandownership>
-      <ns2:RestrictionOnLandownership>
-        <ns2:Information>
-          <ns2:LocalisedText>
-            <ns2:Language>de</ns2:Language>
-            <ns2:Text>Empfindlichkeitsstufe II</ns2:Text>
-          </ns2:LocalisedText>
-        </ns2:Information>
-        <ns2:Theme>
-          <ns2:Code>LandUsePlans</ns2:Code>
-          <ns2:Text>
-            <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
-          </ns2:Text>
-        </ns2:Theme>
-        <ns2:SubTheme>Überlagernde Festlegung</ns2:SubTheme>
-        <ns2:TypeCode>N681</ns2:TypeCode>
-        <ns2:Lawstatus>
-          <ns2:Code>inForce</ns2:Code>
-          <ns2:Text>
-            <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
-          </ns2:Text>
-        </ns2:Lawstatus>
-        <ns2:AreaShare>2382</ns2:AreaShare>
-        <ns2:PartInPercent>39.42403177755709720031518372707068920135498046875</ns2:PartInPercent>
-      </ns2:RestrictionOnLandownership>
-      <ns2:RestrictionOnLandownership>
-        <ns2:Information>
-          <ns2:LocalisedText>
-            <ns2:Language>de</ns2:Language>
-            <ns2:Text>Empfindlichkeitsstufe III aufgestuft</ns2:Text>
-          </ns2:LocalisedText>
-        </ns2:Information>
-        <ns2:Theme>
-          <ns2:Code>LandUsePlans</ns2:Code>
-          <ns2:Text>
-            <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
-          </ns2:Text>
-        </ns2:Theme>
-        <ns2:SubTheme>Überlagernde Festlegung</ns2:SubTheme>
-        <ns2:TypeCode>N684</ns2:TypeCode>
-        <ns2:Lawstatus>
-          <ns2:Code>inForce</ns2:Code>
-          <ns2:Text>
-            <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
-          </ns2:Text>
-        </ns2:Lawstatus>
-        <ns2:AreaShare>3660</ns2:AreaShare>
-        <ns2:PartInPercent>60.57596822244290279968481627292931079864501953125</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-70-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Teilzonenplan "Kindergarten" / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2010/1620</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
       <ns2:RestrictionOnLandownership>
         <ns2:Information>
@@ -236,11 +233,122 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:AreaShare>176</ns2:AreaShare>
         <ns2:PartInPercent>2.912942734193975535816889532725326716899871826171875</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_ZR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>ZR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-ZR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_BR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>BR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-BR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
       <ns2:RestrictionOnLandownership>
         <ns2:Information>
@@ -262,11 +370,122 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:AreaShare>80</ns2:AreaShare>
         <ns2:PartInPercent>1.324064879179079667892438010312616825103759765625</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_ZR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>ZR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-ZR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_BR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>BR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-BR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
       <ns2:RestrictionOnLandownership>
         <ns2:Information>
@@ -288,11 +507,47 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:LengthShare>61</ns2:LengthShare>
-        <ns2:PartInPercent>0</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
       <ns2:RestrictionOnLandownership>
         <ns2:Information>
@@ -314,11 +569,47 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:LengthShare>27</ns2:LengthShare>
-        <ns2:PartInPercent>0</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
       <ns2:RestrictionOnLandownership>
         <ns2:Information>
@@ -340,11 +631,47 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:LengthShare>0</ns2:LengthShare>
-        <ns2:PartInPercent>0</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
       <ns2:RestrictionOnLandownership>
         <ns2:Information>
@@ -366,11 +693,47 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:LengthShare>50</ns2:LengthShare>
-        <ns2:PartInPercent>0</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
       <ns2:RestrictionOnLandownership>
         <ns2:Information>
@@ -392,11 +755,321 @@
           <ns2:Code>inForce</ns2:Code>
           <ns2:Text>
             <ns2:Language>de</ns2:Language>
-            <ns2:Text>Nutzungsplanung</ns2:Text>
+            <ns2:Text>in Kraft</ns2:Text>
           </ns2:Text>
         </ns2:Lawstatus>
         <ns2:LengthShare>49</ns2:LengthShare>
-        <ns2:PartInPercent>0</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+      </ns2:RestrictionOnLandownership>
+      <ns2:RestrictionOnLandownership>
+        <ns2:Information>
+          <ns2:LocalisedText>
+            <ns2:Language>de</ns2:Language>
+            <ns2:Text>Empfindlichkeitsstufe II</ns2:Text>
+          </ns2:LocalisedText>
+        </ns2:Information>
+        <ns2:Theme>
+          <ns2:Code>NoiseSensitivityLevels</ns2:Code>
+          <ns2:Text>
+            <ns2:Language>de</ns2:Language>
+            <ns2:Text>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:Text>
+          </ns2:Text>
+        </ns2:Theme>
+        <ns2:SubTheme>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:SubTheme>
+        <ns2:TypeCode>N681</ns2:TypeCode>
+        <ns2:Lawstatus>
+          <ns2:Code>inForce</ns2:Code>
+          <ns2:Text>
+            <ns2:Language>de</ns2:Language>
+            <ns2:Text>in Kraft</ns2:Text>
+          </ns2:Text>
+        </ns2:Lawstatus>
+        <ns2:AreaShare>2382</ns2:AreaShare>
+        <ns2:PartInPercent>39.42403177755709720031518372707068920135498046875</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_ZR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>ZR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-ZR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_BR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>BR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-BR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+      </ns2:RestrictionOnLandownership>
+      <ns2:RestrictionOnLandownership>
+        <ns2:Information>
+          <ns2:LocalisedText>
+            <ns2:Language>de</ns2:Language>
+            <ns2:Text>Empfindlichkeitsstufe III aufgestuft</ns2:Text>
+          </ns2:LocalisedText>
+        </ns2:Information>
+        <ns2:Theme>
+          <ns2:Code>NoiseSensitivityLevels</ns2:Code>
+          <ns2:Text>
+            <ns2:Language>de</ns2:Language>
+            <ns2:Text>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:Text>
+          </ns2:Text>
+        </ns2:Theme>
+        <ns2:SubTheme>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:SubTheme>
+        <ns2:TypeCode>N684</ns2:TypeCode>
+        <ns2:Lawstatus>
+          <ns2:Code>inForce</ns2:Code>
+          <ns2:Text>
+            <ns2:Language>de</ns2:Language>
+            <ns2:Text>in Kraft</ns2:Text>
+          </ns2:Text>
+        </ns2:Lawstatus>
+        <ns2:AreaShare>3660</ns2:AreaShare>
+        <ns2:PartInPercent>60.57596822244290279968481627292931079864501953125</ns2:PartInPercent>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Entscheide/91-65-E.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Regierungsratsbeschluss</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Kappel: Revision der Ortsplanung / Genehmigung</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>RRB</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>2004/961</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_ZR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Zonenreglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>ZR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-ZR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
+        <ns2:LegalProvisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Document">
+          <ns2:DocumentType>LegalProvision</ns2:DocumentType>
+          <ns2:TextAtWeb>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>https://geoweb.so.ch/zonenplaene/Zonenplaene_pdf/91-Kappel/Reglemente/091_BR.pdf</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:TextAtWeb>
+          <ns2:Lawstatus>
+            <ns2:Code>inForce</ns2:Code>
+            <ns2:Text>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>in Kraft</ns2:Text>
+            </ns2:Text>
+          </ns2:Lawstatus>
+          <ns2:Title>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Title>
+          <ns2:OfficialTitle>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>Baureglement der Einwohnergemeinde 4616 Kappel</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:OfficialTitle>
+          <ns2:Abbreviation>
+            <ns2:LocalisedText>
+              <ns2:Language>de</ns2:Language>
+              <ns2:Text>BR</ns2:Text>
+            </ns2:LocalisedText>
+          </ns2:Abbreviation>
+          <ns2:OfficialNumber>91-BR</ns2:OfficialNumber>
+          <ns2:Canton>SO</ns2:Canton>
+          <ns2:Municipality>2580</ns2:Municipality>
+        </ns2:LegalProvisions>
       </ns2:RestrictionOnLandownership>
     </ns2:RealEstate>
   </ns2:Extract>

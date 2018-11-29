@@ -10,7 +10,11 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:Gedichte.xml -xsl:style0
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:parcel_extract.xml -xsl:parcel_extract.xslt -o:parcel_extract.fo
 xmllint --format parcel_extract.fo -o parcel_extract.fo
 
+xmllint --format CH970687433258.xml -o CH970687433258.xml
 xmllint --format landuseplans_html_extract.xslt -o landuseplans_html_extract.xslt
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH970687433258.xml -xsl:landuseplans_html_extract.xslt -o:CH970687433258.html
 
 ```
+
+## TODO
+- DISTINCT der Dokumente pro Gruppe (wie im statischen Auszug). Für Verifikation ist das hier aber einfacher zu lesen.
