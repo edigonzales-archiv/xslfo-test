@@ -19,6 +19,11 @@
             font-family: 'Barlow Semi Condensed', sans-serif;
             font-size: 0.95em;
           }
+          summary {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 700;
+          }  
           a {
             color: #4C8FBA;
             text-decoration: none;
@@ -109,10 +114,12 @@
       </tr>
     </table>
     <xsl:for-each-group select="data:RestrictionOnLandownership" group-by="data:SubTheme">
-      <xsl:sort data-type="number" order="ascending" select="((data:SubTheme='Grundnutzung') * 1) + ((data:SubTheme='Überlagernde Festlegung') * 2) + ((data:SubTheme='Lärmempfindlichkeitsstufen (in Nutzungszonen)') * 3) + ((data:SubTheme='Erschliessung (Linienobjekt)') * 4) + ((data:SubTheme='Orange') * 5)"/>
-      <h3>
+      <xsl:sort data-type="number" order="ascending" select="((data:SubTheme='Grundnutzung') * 1) + ((data:SubTheme='Überlagernde Festlegung') * 2) + ((data:SubTheme='Lärmempfindlichkeitsstufen (in Nutzungszonen)') * 3) + ((data:SubTheme='Erschliessung (Linienobjekt)') * 4) + ((data:SubTheme='Orange') * 5)"/>
+      <details>
+      <summary>
         <xsl:value-of select="data:SubTheme"/>
-      </h3>
+      </summary>
+      <p>
       <xsl:for-each select="current-group()">
         <table border="0px" class="tableContainer">
           <col width="30%"/>
@@ -205,13 +212,9 @@
             </xsl:for-each>
           </xsl:if>
         </table>
-        <br/>
-        <br/>
       </xsl:for-each>
+    </p>  
+    </details>
     </xsl:for-each-group>
-  </xsl:template>
-  <xsl:template match="data:RestrictionOnLandownership"><hr/><i><xsl:value-of select="data:SubTheme"/></i>
-     :::::: 
-    <i><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></i>
   </xsl:template>
 </xsl:stylesheet>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <GetExtractByIdResponse xmlns="http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract" xmlns:ns2="http://schemas.geo.admin.ch/V_D/OeREB/1.0/ExtractData" xmlns:ns3="http://www.opengis.net/gml/3.2" xmlns:ns4="http://www.w3.org/1999/xlink">
   <ns2:Extract>
-    <ns2:CreationDate>2018-11-29T20:06:21.355+01:00</ns2:CreationDate>
+    <ns2:CreationDate>2018-11-30T14:37:28.230+01:00</ns2:CreationDate>
     <ns2:isReduced>true</ns2:isReduced>
     <ns2:RealEstate>
       <ns2:Number>360</ns2:Number>
@@ -811,7 +811,7 @@
             <ns2:Text>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:Text>
           </ns2:Text>
         </ns2:Theme>
-        <ns2:SubTheme>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:SubTheme>
+        <ns2:SubTheme>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:SubTheme>
         <ns2:TypeCode>N681</ns2:TypeCode>
         <ns2:Lawstatus>
           <ns2:Code>inForce</ns2:Code>
@@ -948,7 +948,7 @@
             <ns2:Text>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:Text>
           </ns2:Text>
         </ns2:Theme>
-        <ns2:SubTheme>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:SubTheme>
+        <ns2:SubTheme>Lärmempfindlichkeitsstufen (in Nutzungszonen)</ns2:SubTheme>
         <ns2:TypeCode>N684</ns2:TypeCode>
         <ns2:Lawstatus>
           <ns2:Code>inForce</ns2:Code>

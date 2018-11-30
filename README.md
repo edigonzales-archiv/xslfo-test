@@ -11,8 +11,8 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:parcel_extract.xml -xsl:
 xmllint --format parcel_extract.fo -o parcel_extract.fo
 
 xmllint --format CH970687433258.xml -o CH970687433258.xml
-xmllint --format landuseplans_html_extract.xslt -o landuseplans_html_extract.xslt
-java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH970687433258.xml -xsl:landuseplans_html_extract.xslt -o:CH970687433258.html
+xmllint --format landuseplans_extract_html.xslt -o landuseplans_extract_html.xslt
+java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH970687433258.xml -xsl:landuseplans_extract_html.xslt -o:CH970687433258.html
 
 ```
 
