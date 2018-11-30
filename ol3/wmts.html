@@ -6,8 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
         <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
-        <link rel="stylesheet" href="https://rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.css" />
-        <link rel="stylesheet" href="https://rawgit.com/walkermatt/ol3-layerswitcher/master/examples/layerswitcher.css" />
         <style type="text/css">
             html, body {
                 padding: 0;
@@ -33,19 +31,11 @@
                 right: 0; 
                 background-color: sandybrown;
             }  
-            .layer-switcher {
-                z-index: 10000;
-                
-
-
-            } 
-
         </style>
         <title>WMTS</title>
     </head>
     <body>
         <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js" type="text/javascript"></script>
-        <script src="https://rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.js"></script>        
         <div id="map" class="Right"></div>
         <div id="info" class="Left">fubar</div>
         <script>
@@ -133,12 +123,6 @@
                 resolutions: mapResolutions
                 })
             });
-
-            var layerSwitcher = new ol.control.LayerSwitcher({
-                tipLabel: 'Légende' // Optional label for button
-            });
-            console.log(layerSwitcher);
-            map.addControl(layerSwitcher);
         </script>
     </body>
 </html>
