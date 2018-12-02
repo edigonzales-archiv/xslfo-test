@@ -59,10 +59,22 @@
         </fo:block>
       </fo:static-content>
       <fo:static-content flow-name="xsl-region-after">
-        <fo:block font-size="7pt" font-style="italic" font-weight="400" font-family="Frutiger">
-            	Auszug erstellt am <xsl:value-of select="format-dateTime(extract:CreationDate,'[Y0001]-[M01]-[D01]')"/> um <xsl:value-of select="format-dateTime(extract:CreationDate,'[H01]:[m01]:[s01]')"/> Uhr.
-            </fo:block>
-      </fo:static-content>
+        <fo:table table-layout="fixed" width="100%" margin-top="4mm" font-size="7pt" font-style="italic" font-weight="400" font-family="Frutiger">
+          <fo:table-column column-width="50%"/>
+          <fo:table-column column-width="50%"/>
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block><xsl:value-of select="format-dateTime(extract:CreationDate,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]')"/></fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="right">
+                <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="my-sequence-id"/></fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+      </fo:static-content>    
+      
       <fo:flow flow-name="xsl-region-body">
         <fo:block-container wrap-option="wrap" hyphenate="false" hyphenation-character="-" font-weight="700" font-size="14pt" font-family="Frutiger">
           <fo:table table-layout="fixed" width="100%">
