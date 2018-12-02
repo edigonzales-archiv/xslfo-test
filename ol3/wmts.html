@@ -36,6 +36,8 @@
     </head>
     <body>
         <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
         <div id="map" class="Right"></div>
         <div id="info" class="Left">fubar</div>
         <script>
@@ -123,6 +125,42 @@
                 resolutions: mapResolutions
                 })
             });
+
+            map.on('singleclick', function(evt) {
+                console.log(evt.coordinate);
+                var coord = evt.coordinate;
+                var url = 'http://localhost:8888/landuseplans/getegrid/xml/?XY=' + coord[0] + ',' + coord[1];
+                console.log(url);
+
+
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    dataType: 'xml',
+                    success: function (response) {
+                        console.log(response);
+                        //I couldn't get the response to be read as a GML file so changed it to geoJSON 
+                        Results = response;
+                        if (response.features.length === 0) {
+                            return;
+                        }
+
+                        setPopup(response,evt,0);
+                    }
+                });
+
+
+                document.getElementById('extract').innerHTML = '';
+                var viewResolution = /** @type {number} */ (view.getResolution());
+                var url = Rustica.getGetFeatureInfoUrl (
+                    evt.coordinate, viewResolution, 'EPSG:3857',
+                    {'INFO_FORMAT': 'application/json'});
+                if (url) {
+                    document.getElementById('extract').innerHTML =
+                '<iframe seamless src="' + url + '"></iframe>';
+                }
+            });
+
         </script>
     </body>
 </html>
