@@ -10,6 +10,7 @@
       <Number>4</Number>
       <PostalCode>4501</PostalCode>
       <City>Solothurn</City>
+      <Phone>032 627 75 92</Phone>
     </ResponsibleOffice>
     <RealEstate>
       <Number>680</Number>
@@ -53,6 +54,7 @@
         <Number>6</Number>
         <PostalCode>4562</PostalCode>
         <City>Biberist</City>
+        <Phone>032 671 26 30</Phone>
       </SurveyorOffice>
       <LandRegisterOffice>
         <Name>Amtschreiberei Region Solothurn</Name>
@@ -63,9 +65,10 @@
         <Number>4</Number>
         <PostalCode>4501</PostalCode>
         <City>Solothurn</City>
+        <Phone>032 627 75 11</Phone>
       </LandRegisterOffice>
       <Type>Liegenschaft</Type>
     </RealEstate>
-    <CreationDate>2018-12-02T17:21:21.146+01:00</CreationDate>
+    <CreationDate>2018-12-02T19:10:50.288+01:00</CreationDate>
   </Extract>
 </GetExtractByIdResponse>

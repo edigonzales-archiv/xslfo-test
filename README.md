@@ -18,6 +18,7 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH970687433258.xml -xsl:
 
 ```
 xmllint --format CH310663327779.xml -o CH310663327779.xml
+xmllint --format parceldescription_extract_fo.xslt -o parceldescription_extract_fo.xslt
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH310663327779.xml -xsl:parceldescription_extract_fo.xslt -o:CH310663327779.fo
 ../../apps/fop-2.3/fop/fop -fo CH310663327779.fo -pdf CH310663327779.pdf -c fop.xconf
 ```

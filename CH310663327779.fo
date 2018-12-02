@@ -35,9 +35,7 @@
                          margin-top="1mm">
                   <fo:block>Rötistrasse 4</fo:block>
                   <fo:block>4501 Solothurn</fo:block>
-                  <fo:block>
-              	Telefon 032 999 88 77
-              </fo:block>
+                  <fo:block>032 627 75 92</fo:block>
                   <fo:block>agi@bd.so.ch</fo:block>
                   <fo:block>http://agi.so.ch</fo:block>
                </fo:block>
@@ -59,9 +57,9 @@
       <fo:static-content flow-name="xsl-region-after">
          <fo:block font-size="7pt"
                    font-style="italic"
-                   font-weight="700"
+                   font-weight="400"
                    font-family="Frutiger">
-            	Auszug erstellt am 2018-12-02 um 17:21:21 Uhr.
+            	Auszug erstellt am 2018-12-02 um 19:10:50 Uhr.
             </fo:block>
       </fo:static-content>
       <fo:flow flow-name="xsl-region-body">

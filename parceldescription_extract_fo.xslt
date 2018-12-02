@@ -34,7 +34,7 @@
                 <xsl:value-of select="extract:ResponsibleOffice/extract:City"/>
               </fo:block>
               <fo:block>
-              	Telefon 032 999 88 77
+              	<xsl:value-of select="extract:ResponsibleOffice/extract:Phone"/>
               </fo:block>
               <fo:block>
                 <xsl:value-of select="extract:ResponsibleOffice/extract:Email"/>
