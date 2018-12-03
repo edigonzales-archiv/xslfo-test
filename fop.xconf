@@ -12,12 +12,6 @@ also removed unnecessary renderers as we are using pdf only.
   <renderers>
     <renderer mime="application/pdf">
       <fonts>
-        <font kerning="yes" embed-url="Arial.ttf" encoding-mode="single-byte">
-          <font-triplet name="Arial" style="normal" weight="400"/>
-        </font>
-        <font kerning="yes" embed-url="Arial.ttf" encoding-mode="single-byte">
-          <font-triplet name="Arial" style="normal" weight="700"/>
-        </font>
         <font kerning="yes" embed-url="FrutigerLTCom-Black.ttf" encoding-mode="single-byte">
           <font-triplet name="Frutiger" style="normal" weight="700"/>
         </font>
@@ -30,6 +24,12 @@ also removed unnecessary renderers as we are using pdf only.
         <font kerning="yes" embed-url="FrutigerLTCom-Italic.ttf" encoding-mode="single-byte">
           <font-triplet name="Frutiger" style="italic" weight="400"/>
         </font>
+        <font kerning="yes" embed-url="Arial.ttf" encoding-mode="single-byte">
+          <font-triplet name="Arial" style="normal" weight="400"/>
+        </font>
+        <font kerning="yes" embed-url="Arial.ttf" encoding-mode="single-byte">
+          <font-triplet name="Arial" style="normal" weight="700"/>
+        </font>        
       </fonts>
     </renderer>
   </renderers>	
