@@ -10,9 +10,9 @@
                              margin-bottom="12mm"
                              margin-left="15mm"
                              margin-right="12mm">
-         <fo:region-body margin-top="45mm" background-color="#FFFF00"/>
+         <fo:region-body margin-top="45mm" background-color="#FFFFFF"/>
          <fo:region-before extent="40mm" background-color="#FFFFFF"/>
-         <fo:region-after extent="10mm" background-color="#00FFFF"/>
+         <fo:region-after extent="10mm" background-color="#FFFFFF"/>
       </fo:simple-page-master>
    </fo:layout-master-set>
    <fo:page-sequence master-reference="mainPage" id="my-sequence-id">
@@ -67,7 +67,7 @@
             <fo:table-body>
                <fo:table-row>
                   <fo:table-cell>
-                     <fo:block>2018-12-02 19:10:50</fo:block>
+                     <fo:block>2018-12-03 17:24:29</fo:block>
                   </fo:table-cell>
                   <fo:table-cell text-align="right">
                      <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="my-sequence-id"/>
@@ -93,7 +93,7 @@
                         <fo:block>Grundstücksbeschrieb</fo:block>
                      </fo:table-cell>
                      <fo:table-cell>
-                        <fo:block>GB-Nr. 7517</fo:block>
+                        <fo:block>GB-Nr. 680</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                </fo:table-body>
@@ -117,7 +117,7 @@
                         <fo:block>Gemeinde:</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right" padding-top="2mm">
-                        <fo:block>Grenchen</fo:block>
+                        <fo:block>Biberist</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right" padding-top="2mm">
                         <fo:block/>
@@ -126,7 +126,7 @@
                         <fo:block>EGRID:</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right" padding-top="2mm">
-                        <fo:block>CH667432068228</fo:block>
+                        <fo:block>CH310663327779</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                   <fo:table-row>
@@ -134,7 +134,7 @@
                         <fo:block>Grundbuch:</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right" padding-top="2mm">
-                        <fo:block>Grenchen</fo:block>
+                        <fo:block>Biberist</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right" padding-top="2mm">
                         <fo:block/>
@@ -143,7 +143,7 @@
                         <fo:block>NBIdent:</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right" padding-top="2mm">
-                        <fo:block>SO0200002546</fo:block>
+                        <fo:block>SO0200002513</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                </fo:table-body>
@@ -172,8 +172,175 @@
                         <fo:block>Grundstücksfläche:</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right" padding-top="2mm">
-                        <fo:block>NaN m<fo:inline baseline-shift="30%" font-size="70%">2</fo:inline>
+                        <fo:block line-height-shift-adjustment="disregard-shifts">65'076 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
                         </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container wrap-option="wrap"
+                             hyphenate="false"
+                             hyphenation-character="-"
+                             font-weight="400"
+                             font-size="10pt"
+                             font-family="Frutiger">
+            <fo:table table-layout="fixed" width="100%" margin-top="12mm">
+               <fo:table-column column-width="90mm"/>
+               <fo:table-column column-width="90mm"/>
+               <fo:table-body>
+                  <fo:table-row>
+                     <fo:table-cell font-weight="700" padding-top="2mm">
+                        <fo:block>Bodenbedeckung:</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell font-weight="700" padding-top="2mm">
+                        <fo:block>Flurnamen:</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row>
+                     <fo:table-cell font-weight="400" padding-top="1mm">
+                        <fo:block>
+                           <fo:table table-layout="fixed" width="100%" margin-top="0mm">
+                              <fo:table-column column-width="50mm"/>
+                              <fo:table-column column-width="20mm"/>
+                              <fo:table-column column-width="10mm"/>
+                              <fo:table-body border-width="0pt" border-style="solid">
+                                 <fo:table-row border-width="0pt" border-style="solid">
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block>Acker_Wiese</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block text-align="right">7'194</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block margin-left="1mm" line-height-shift-adjustment="disregard-shifts">m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                                 <fo:table-row border-width="0pt" border-style="solid">
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block>Gartenanlage</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block text-align="right">1'623</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block margin-left="1mm" line-height-shift-adjustment="disregard-shifts">m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                                 <fo:table-row border-width="0pt" border-style="solid">
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block>Gebaeude</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block text-align="right">1'605</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block margin-left="1mm" line-height-shift-adjustment="disregard-shifts">m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                                 <fo:table-row border-width="0pt" border-style="solid">
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block>Gebaeudeerschliessung</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block text-align="right">2'580</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block margin-left="1mm" line-height-shift-adjustment="disregard-shifts">m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                                 <fo:table-row border-width="0pt" border-style="solid">
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block>Obstkultur</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block text-align="right">48'714</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block margin-left="1mm" line-height-shift-adjustment="disregard-shifts">m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                                 <fo:table-row border-width="0pt" border-style="solid">
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block>uebrige_Intensivkultur</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block text-align="right">3'357</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block margin-left="1mm" line-height-shift-adjustment="disregard-shifts">m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                                 <fo:table-row border-width="0pt"
+                                               border-style="solid"
+                                               font-weight="400"
+                                               font-style="italic">
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block>Total</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block text-align="right">65'073</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-top="1mm">
+                                       <fo:block margin-left="1mm" line-height-shift-adjustment="disregard-shifts">m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                              </fo:table-body>
+                           </fo:table>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell font-weight="400" padding-top="2mm">
+                        <fo:block>Brunngrabenacker, Oberstmatt, Rumi, Rütiacker</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container wrap-option="wrap"
+                             hyphenate="false"
+                             hyphenation-character="-"
+                             font-weight="400"
+                             font-size="10pt"
+                             font-family="Frutiger">
+            <fo:table table-layout="fixed" width="100%" margin-top="12mm">
+               <fo:table-column column-width="90mm"/>
+               <fo:table-column column-width="90mm"/>
+               <fo:table-body>
+                  <fo:table-row>
+                     <fo:table-cell font-weight="700" padding-top="2mm">
+                        <fo:block>Grundbuchamt:</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell font-weight="700" padding-top="2mm">
+                        <fo:block>Nachführungsgeometer:</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row>
+                     <fo:table-cell font-weight="400" padding-top="2mm">
+                        <fo:block linefeed-treatment="preserve">Amtschreiberei Region Solothurn
+Grundbuchamt
+Rötistrasse 4
+4501 Solothurn
+
+Telefon 032 627 75 11
+gb.so@fd.so.ch
+www.so.ch/verwaltung/finanzdepartement/grundbuchaemter/</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell font-weight="400" padding-top="2mm">
+                        <fo:block linefeed-treatment="preserve">Reto Meile
+W+H AG
+Blümlisalpstrasse 6
+4562 Biberist
+
+Telefon 032 671 26 30
+admin@w-h.ch
+www.w-h.ch</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                </fo:table-body>

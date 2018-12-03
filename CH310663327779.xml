@@ -38,10 +38,6 @@
         <Area>48714</Area>
       </LandCoverShare>
       <LandCoverShare>
-        <Type>Strasse_Weg</Type>
-        <Area>0</Area>
-      </LandCoverShare>
-      <LandCoverShare>
         <Type>uebrige_Intensivkultur</Type>
         <Area>3357</Area>
       </LandCoverShare>
@@ -68,7 +64,10 @@
         <Phone>032 627 75 11</Phone>
       </LandRegisterOffice>
       <Type>Liegenschaft</Type>
+      <Municipality>Biberist</Municipality>
+      <SubunitOfLandRegister>Biberist</SubunitOfLandRegister>
+      <LandRegistryArea>65076</LandRegistryArea>
     </RealEstate>
-    <CreationDate>2018-12-02T19:10:50.288+01:00</CreationDate>
+    <CreationDate>2018-12-03T17:24:29.500+01:00</CreationDate>
   </Extract>
 </GetExtractByIdResponse>
