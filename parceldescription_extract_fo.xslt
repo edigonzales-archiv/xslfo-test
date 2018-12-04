@@ -295,7 +295,18 @@
           </fo:table-body>
         </fo:table>
       </fo:block-container>
-      
+      <fo:block-container page-break-before="always" margin="0mm" padding="0mm" space-before="0mm">
+        <fo:block margin="0mm" padding="0mm" space-before="0mm">
+          <fo:external-graphic height="217mm" width="182mm" content-height="scale-to-fit" margin="0mm" padding="0mm" space-before="0mm" border="0.5pt solid black">
+            <xsl:attribute name="src">
+              <xsl:text>url('data:</xsl:text>
+              <xsl:text>image/png;base64,</xsl:text>
+              <xsl:value-of select="extract:Map"/>
+              <xsl:text>')</xsl:text>
+            </xsl:attribute>
+          </fo:external-graphic>
+        </fo:block>
+      </fo:block-container>
     </fo:flow>
   </xsl:template>
 </xsl:stylesheet>

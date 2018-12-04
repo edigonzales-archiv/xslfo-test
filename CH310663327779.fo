@@ -10,8 +10,8 @@
                              margin-bottom="12mm"
                              margin-left="15mm"
                              margin-right="12mm">
-         <fo:region-body margin-top="45mm" background-color="#FFFFFF"/>
-         <fo:region-before extent="40mm" background-color="#FFFFFF"/>
+         <fo:region-body margin-top="45mm" background-color="#FFFF00"/>
+         <fo:region-before extent="40mm" background-color="#00FFFF"/>
          <fo:region-after extent="10mm" background-color="#FFFFFF"/>
       </fo:simple-page-master>
    </fo:layout-master-set>
