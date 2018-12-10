@@ -14,8 +14,8 @@
       <fo:page-sequence master-reference="titlePage">
         <fo:static-content flow-name="xsl-region-before">
           <fo:block>
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="#4F491D">
-              <fo:block>
+            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="gold">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                 <fo:external-graphic width="44mm" content-width="scale-to-fit" >
                   <xsl:attribute name="src">
                     <xsl:text>url('data:</xsl:text>
@@ -27,7 +27,7 @@
               </fo:block>
             </fo:block-container>
             <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="green">
-              <fo:block>
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                 <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
                   <xsl:attribute name="src">
                     <xsl:text>url('data:</xsl:text>
