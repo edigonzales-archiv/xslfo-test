@@ -5,7 +5,7 @@
   <xsl:template match="extract:GetExtractByIdResponse">
     <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <fo:layout-master-set>
-        <fo:simple-page-master master-name="titlePage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="10mm" margin-left="18mm" margin-right="18mm"> <!--should be 18mm-->
+        <fo:simple-page-master master-name="titlePage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="10mm" margin-left="18mm" margin-right="18mm"> 
           <fo:region-body margin-top="30mm" background-color="yellow"/>
           <fo:region-before extent="30mm" background-color="blue"/>
           <fo:region-after extent="20mm" background-color="blue"/>
@@ -52,6 +52,7 @@
           </fo:block>
         </fo:static-content>
         <fo:flow flow-name="xsl-region-body">
+          <!--font size should be 18pt but that seems to large and will lead to another line break behaviour-->
           <fo:block line-height="21pt" linefeed-treatment="preserve" font-weight="700" font-size="17.7pt" font-family="Cadastra">Auszug aus dem Kataster der&#x000A;öffentlich-rechtlichen Eigentumsbeschränkungen&#x000A;(ÖREB-Kataster)</fo:block>
           <!--<xsl:apply-templates/>-->
         </fo:flow>
