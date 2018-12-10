@@ -16,7 +16,7 @@
           <fo:block>
             <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="#4F491D">
               <fo:block>
-                <fo:external-graphic width="44mm" content-width="scale-to-fit" content-height="scale-to-fit">
+                <fo:external-graphic width="44mm" content-width="scale-to-fit" >
                   <xsl:attribute name="src">
                     <xsl:text>url('data:</xsl:text>
                     <xsl:text>image/png;base64,</xsl:text>
