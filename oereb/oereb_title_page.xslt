@@ -2,37 +2,64 @@
 <xsl:stylesheet xmlns:gml="https://www.opengis.net/gml/3.2"  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:extract="http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract" xmlns:data="http://schemas.geo.admin.ch/V_D/OeREB/1.0/ExtractData" exclude-result-prefixes="gml xlink extract data" version="3.0">
   <xsl:output method="xml" indent="yes"/>
   <xsl:decimal-format name="swiss" decimal-separator="." grouping-separator="'"/>  
-  <xsl:template match="extract:GetExtractByIdResponse">
+  <xsl:template match="extract:GetExtractByIdResponse/data:Extract">
     <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <fo:layout-master-set>
         <fo:simple-page-master master-name="titlePage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="10mm" margin-left="18mm" margin-right="18mm"> 
           <fo:region-body margin-top="30mm" background-color="yellow"/>
-          <fo:region-before extent="30mm" background-color="blue"/>
+          <fo:region-before extent="30mm" background-color="transparent"/>
           <fo:region-after extent="20mm" background-color="blue"/>
         </fo:simple-page-master>
       </fo:layout-master-set>
       <fo:page-sequence master-reference="titlePage">
         <fo:static-content flow-name="xsl-region-before">
           <fo:block>
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="gold">
+            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="transparent">
               <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                 <fo:external-graphic width="44mm" content-width="scale-to-fit" >
                   <xsl:attribute name="src">
                     <xsl:text>url('data:</xsl:text>
                     <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:Extract/data:FederalLogo"/>
+                    <xsl:value-of select="data:FederalLogo"/>
                     <xsl:text>')</xsl:text>
                   </xsl:attribute>
                 </fo:external-graphic>
               </fo:block>
             </fo:block-container>
-            <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="green">
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="60mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic border="0pt solid black" width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:CantonalLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="95mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:MunicipalityLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="transparent">
               <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                 <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
                   <xsl:attribute name="src">
                     <xsl:text>url('data:</xsl:text>
                     <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:Extract/data:LogoPLRCadastre"/>
+                    <xsl:value-of select="data:LogoPLRCadastre"/>
                     <xsl:text>')</xsl:text>
                   </xsl:attribute>
                 </fo:external-graphic>
@@ -46,15 +73,37 @@
             </fo:block-container>
             <fo:block-container absolute-position="absolute" top="19mm" left="0mm">
               <fo:block>
-                <xsl:value-of select="data:Extract/data:RealEstate/data:EGRID"/>
+                <xsl:value-of select="data:RealEstate/data:EGRID"/>
               </fo:block>
             </fo:block-container>
           </fo:block>
         </fo:static-content>
         <fo:flow flow-name="xsl-region-body">
-          <!--font size should be 18pt but that seems to large and will lead to another line break behaviour-->
-          <fo:block line-height="21pt" linefeed-treatment="preserve" font-weight="700" font-size="17.7pt" font-family="Cadastra">Auszug aus dem Kataster der&#x000A;öffentlich-rechtlichen Eigentumsbeschränkungen&#x000A;(ÖREB-Kataster)</fo:block>
+          <!--font size should be 18pt but that seems to large and will lead to non-directive conform line break behaviour-->
+          <fo:block-container height="28mm" background-color="green">
+            <fo:block line-height="21pt" linefeed-treatment="preserve" font-weight="700" font-size="17.7pt" font-family="Cadastra">Auszug aus dem Kataster der&#x000A;öffentlich-rechtlichen Eigentumsbeschränkungen&#x000A;(ÖREB-Kataster)</fo:block>
+          </fo:block-container>            
           <!--<xsl:apply-templates/>-->
+
+            <fo:block-container height="109mm" background-color="gold">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic border="0.2pt solid black" width="174mm" height="99mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:RealEstate/data:PlanForLandRegisterMainPage"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container >
+              <fo:block>
+                <xsl:value-of select="data:RealEstate/data:EGRID"/>
+              </fo:block>
+            </fo:block-container>
+
         </fo:flow>
       </fo:page-sequence>
     </fo:root>
