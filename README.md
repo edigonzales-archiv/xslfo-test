@@ -39,10 +39,5 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH907705273474.xml -xsl:
 
 ```
 
-
-
-
-
-
 ## TODO
 - DISTINCT der Dokumente pro Gruppe (wie im statischen Auszug). Für Verifikation ist das hier aber einfacher zu lesen.

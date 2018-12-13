@@ -192,14 +192,162 @@
                       <fo:block>Katasterverantwortliche Stelle</fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
-                      <!-- THIS IS UGLY!!!!! AND HIGHLY FORBIDDEN. But I think the namespace in the input xml is wrong (httpS instead of only http) -->
-                      <fo:block><xsl:value-of select="*[local-name()='PLRCadastreAuthority']/*[local-name()='Name']/*[local-name()='LocalisedText']/*[local-name()='Text']"/>, <xsl:value-of select="*[local-name()='PLRCadastreAuthority']/*[local-name()='Street']"/><xsl:text> </xsl:text><xsl:value-of select="*[local-name()='PLRCadastreAuthority']/*[local-name()='Number']"/>, <xsl:value-of select="*[local-name()='PLRCadastreAuthority']/*[local-name()='PostalCode']"/><xsl:text> </xsl:text><xsl:value-of select="*[local-name()='PLRCadastreAuthority']/*[local-name()='City']"/></fo:block>
+                      <fo:block><xsl:value-of select="data:PLRCadastreAuthority/data:Name/data:LocalisedText/data:Text"/>, <xsl:value-of select="data:PLRCadastreAuthority/data:Street"/><xsl:text> </xsl:text><xsl:value-of select="data:PLRCadastreAuthority/data:Number"/>, <xsl:value-of select="data:PLRCadastreAuthority/data:PostalCode"/><xsl:text> </xsl:text><xsl:value-of select="data:PLRCadastreAuthority/data:City"/></fo:block>
                     </fo:table-cell>
                   </fo:table-row>
                 </fo:table-body>
               </fo:table>
             </fo:block-container>
->
+
+          <fo:block-container height="13mm" background-color="green">
+            <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra">Übersicht ÖREB-Themen</fo:block>
+          </fo:block-container>            
+
+          <fo:block-container background-color="indianred">
+            <fo:block line-height="11.5pt" linefeed-treatment="preserve" font-weight="700" font-size="8.5pt" font-family="Cadastra">Eigentumsbeschränkungen, welche das Grundstück <xsl:value-of select="data:RealEstate/data:Number"/> in <xsl:value-of select="data:RealEstate/data:Municipality"/> betreffen</fo:block>
+          </fo:block-container>            
+
+            <fo:block-container>
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="orange">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="7mm"/>
+                <fo:table-column column-width="167mm"/>
+                <fo:table-body>
+                  <fo:table-row vertical-align="middle">
+                    <fo:table-cell>
+                      <fo:block margin-top="1mm" margin-bottom="3.8mm" font-weight="700" font-size="6.5pt">Seite</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block/>
+                    </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle">
+                    <fo:table-cell height="30mm" >
+                      <fo:block font-weight="400" font-size="6.5pt">Fubar</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block/>
+                    </fo:table-cell>
+                  </fo:table-row>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+
+          <fo:block-container background-color="indianred">
+            <fo:block line-height="11.5pt" linefeed-treatment="preserve" font-weight="700" font-size="8.5pt" font-family="Cadastra">Eigentumsbeschränkungen, welche das Grundstück nicht betreffen</fo:block>
+          </fo:block-container>            
+
+            <fo:block-container margin-bottom="1mm">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="orange">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-body>
+                  <xsl:for-each select="data:NotConcernedTheme">
+                    <xsl:sort data-type="number" order="ascending" select="(number(data:Code='LandUsePlans') * 1) + (number(data:Code='MotorwaysProjectPlaningZones') * 2) + (number(data:Code='MotorwaysBuildingLines') * 3) + (number(data:Code='RailwaysProjectPlanningZones') * 4) + (number(data:Code='RailwaysBuildingLines') * 5) + (number(data:Code='AirportsProjectPlanningZones') * 6) + (number(data:Code='AirportsBuildingLines') * 7) + (number(data:Code='AirportsSecurityZonePlans') * 8) + (number(data:Code='ContaminatedSites') * 9) + (number(data:Code='ContaminatedMilitarySites') * 10) + (number(data:Code='ContaminatedCivilAviationSites') * 11) + (number(data:Code='ContaminatedPublicTransportSites') * 12) + (number(data:Code='GroundwaterProtectionZones') * 13) + (number(data:Code='GroundwaterProtectionSites') * 14) + (number(data:Code='NoiseSensitivityLevels') * 15) + (number(data:Code='ForestPerimeters') * 16) + (number(data:Code='ForestDistanceLines') * 17)"/>
+                    <fo:table-row vertical-align="middle">
+                      <fo:table-cell>
+                        <fo:block><xsl:value-of select="data:Text/data:Text"/></fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                  </xsl:for-each>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+
+          <fo:block-container background-color="indianred">
+            <fo:block line-height="11.5pt" linefeed-treatment="preserve" font-weight="700" font-size="8.5pt" font-family="Cadastra">Allfällige Eigentumsbeschränkungen, zu denen noch keine Daten vorhanden sind</fo:block>
+          </fo:block-container>            
+
+            <fo:block-container margin-bottom="1mm">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+              </fo:block>
+            </fo:block-container>
+
+<!-- margin-bottom ist heuristisch -->
+            <fo:block-container margin-bottom="20mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="orange">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-body>
+                  <xsl:for-each select="data:ThemeWithoutData">
+                    <xsl:sort data-type="number" order="ascending" select="(number(data:Code='LandUsePlans') * 1) + (number(data:Code='MotorwaysProjectPlaningZones') * 2) + (number(data:Code='MotorwaysBuildingLines') * 3) + (number(data:Code='RailwaysProjectPlanningZones') * 4) + (number(data:Code='RailwaysBuildingLines') * 5) + (number(data:Code='AirportsProjectPlanningZones') * 6) + (number(data:Code='AirportsBuildingLines') * 7) + (number(data:Code='AirportsSecurityZonePlans') * 8) + (number(data:Code='ContaminatedSites') * 9) + (number(data:Code='ContaminatedMilitarySites') * 10) + (number(data:Code='ContaminatedCivilAviationSites') * 11) + (number(data:Code='ContaminatedPublicTransportSites') * 12) + (number(data:Code='GroundwaterProtectionZones') * 13) + (number(data:Code='GroundwaterProtectionSites') * 14) + (number(data:Code='NoiseSensitivityLevels') * 15) + (number(data:Code='ForestPerimeters') * 16) + (number(data:Code='ForestDistanceLines') * 17)"/>
+                    <fo:table-row vertical-align="middle">
+                      <fo:table-cell>
+                        <fo:block><xsl:value-of select="data:Text/data:Text"/></fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                  </xsl:for-each>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+
+            <fo:block-container>
+            <fo:block>
+              <fo:footnote>
+                <fo:inline/>
+                <fo:footnote-body>
+                  <fo:block keep-together.within-column="always">
+                    <fo:block-container margin-top="0mm" margin-bottom="5mm" font-weight="400" font-size="6.5pt" line-height="8.5pt" font-family="Cadastra" background-color="yellowgreen">
+                      <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="87mm"/>
+                        <fo:table-column column-width="87mm"/>
+                        <fo:table-body>
+                          <fo:table-row vertical-align="top">
+                            <fo:table-cell padding-right="1.5mm">
+                              <fo:block font-weight="700">Allgemeine Informationen</fo:block>
+                              <fo:block><xsl:value-of select="data:GeneralInformation/data:LocalisedText/data:Text"/></fo:block>
+                              <fo:block margin-top="2.2mm" font-weight="700">Grundlagedaten</fo:block>
+                              <fo:block><xsl:value-of select="data:BaseData/data:LocalisedText/data:Text"/></fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell padding-left="1.5mm">
+                              <fo:block/>
+                              <xsl:for-each select="data:ExclusionOfLiability">
+                                <fo:block font-weight="700"><xsl:value-of select="data:Title/data:LocalisedText/data:Text"/></fo:block>
+                                <fo:block><xsl:value-of select="data:Content/data:LocalisedText/data:Text"/></fo:block>
+                              </xsl:for-each>
+                              <fo:block margin-top="2.2mm">
+                                <fo:table table-layout="fixed" width="100%">
+                                  <fo:table-column column-width="35mm"/>
+                                  <fo:table-column column-width="40mm"/>
+                                  <fo:table-body>
+                                    <fo:table-row vertical-align="top">
+                                      <fo:table-cell>
+                                        <fo:block font-weight="700">Um einen aktualisierten Auszug aus dem ÖREB-Kataster zu erhalten, scannen Sie bitte den QR-Code.</fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell padding-left="4mm">
+                                        <fo:block>
+                                          <fo:external-graphic width="20mm" height="20mm" content-width="scale-to-fit" content-height="scale-to-fit">
+                                            <xsl:attribute name="src">
+                                              <xsl:text>url('data:</xsl:text>
+                                              <xsl:text>image/png;base64,</xsl:text>
+                                              <xsl:value-of select="data:QRCode"/>
+                                              <xsl:text>')</xsl:text>
+                                            </xsl:attribute>
+                                          </fo:external-graphic>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                  </fo:table-body>
+                                </fo:table>
+                              </fo:block>
+                            </fo:table-cell>
+                          </fo:table-row>
+                        </fo:table-body>
+                      </fo:table>
+                    </fo:block-container>
+                  </fo:block>
+                </fo:footnote-body>
+              </fo:footnote>
+            </fo:block>
+            </fo:block-container>
 
         </fo:flow>
       </fo:page-sequence>

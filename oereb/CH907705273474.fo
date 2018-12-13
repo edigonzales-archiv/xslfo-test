@@ -99,8 +99,8 @@
                <fo:table-body>
                   <fo:table-row vertical-align="bottom">
                      <fo:table-cell vertical-align="bottom">
-                        <fo:block vertical-align="bottom">08.12.2018<fo:inline padding-left="1em">20:48:42</fo:inline>
-                           <fo:inline padding-left="1em">5a8e8049-2ac3-4725-a553-692616b9186d</fo:inline>
+                        <fo:block vertical-align="bottom">13.12.2018<fo:inline padding-left="1em">17:41:33</fo:inline>
+                           <fo:inline padding-left="1em">4e0bc741-72cf-45c0-8faf-716930d397f7</fo:inline>
                         </fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
@@ -211,7 +211,7 @@
                         <fo:block font-weight="700">Auszugsnummer</fo:block>
                      </fo:table-cell>
                      <fo:table-cell>
-                        <fo:block font-weight="700">5a8e8049-2ac3-4725-a553-692616b9186d</fo:block>
+                        <fo:block font-weight="700">4e0bc741-72cf-45c0-8faf-716930d397f7</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                   <fo:table-row border-bottom="0.2pt solid black"
@@ -221,7 +221,7 @@
                         <fo:block>Erstellungsdatum des Auszugs</fo:block>
                      </fo:table-cell>
                      <fo:table-cell>
-                        <fo:block>08.12.2018</fo:block>
+                        <fo:block>13.12.2018</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                   <fo:table-row border-bottom="0.2pt solid black"
@@ -237,8 +237,270 @@
                </fo:table-body>
             </fo:table>
          </fo:block-container>
-&gt;
-
-        </fo:flow>
+         <fo:block-container height="13mm" background-color="green">
+            <fo:block page-break-before="always"
+                      line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="15pt"
+                      font-family="Cadastra">Übersicht ÖREB-Themen</fo:block>
+         </fo:block-container>
+         <fo:block-container background-color="indianred">
+            <fo:block line-height="11.5pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="8.5pt"
+                      font-family="Cadastra">Eigentumsbeschränkungen, welche das Grundstück 276 in Stans betreffen</fo:block>
+         </fo:block-container>
+         <fo:block-container>
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
+         </fo:block-container>
+         <fo:block-container margin-bottom="10mm"
+                             font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="orange">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="7mm"/>
+               <fo:table-column column-width="167mm"/>
+               <fo:table-body>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block margin-top="1mm"
+                                  margin-bottom="3.8mm"
+                                  font-weight="700"
+                                  font-size="6.5pt">Seite</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle">
+                     <fo:table-cell height="30mm">
+                        <fo:block font-weight="400" font-size="6.5pt">Fubar</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container background-color="indianred">
+            <fo:block line-height="11.5pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="8.5pt"
+                      font-family="Cadastra">Eigentumsbeschränkungen, welche das Grundstück nicht betreffen</fo:block>
+         </fo:block-container>
+         <fo:block-container margin-bottom="1mm">
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
+         </fo:block-container>
+         <fo:block-container margin-bottom="10mm"
+                             font-weight="400"
+                             font-size="8.5pt"
+                             line-height="11.5pt"
+                             font-family="Cadastra"
+                             background-color="orange">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-body>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Nutzungsplanung kantonal</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Gestaltungsplan (Sondernutzungsplan)</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Projektierungszonen Nationalstrassen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Projektierungszonen Eisenbahnanlagen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Baulinien Eisenbahnanlagen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Projektierungszonen Flughafenanlagen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Baulinien Flughafenanlagen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Sicherheitszonenplan</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Kataster der belasteten Standorte</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Kataster der belasteten Standorte im Bereich der zivilen Flugplätze</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Kataster der belasteten Standorte im Bereich des öffentlichen Verkehrs</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Grundwasserschutzzonen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Grundwasserschutzareale</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Statische Waldgrenzen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Waldabstandslinien</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container background-color="indianred">
+            <fo:block line-height="11.5pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="8.5pt"
+                      font-family="Cadastra">Allfällige Eigentumsbeschränkungen, zu denen noch keine Daten vorhanden sind</fo:block>
+         </fo:block-container>
+         <fo:block-container margin-bottom="1mm">
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
+         </fo:block-container>
+         <fo:block-container margin-bottom="20mm"
+                             font-weight="400"
+                             font-size="8.5pt"
+                             line-height="11.5pt"
+                             font-family="Cadastra"
+                             background-color="orange">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-body>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Baulinien Nationalstrassen</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle">
+                     <fo:table-cell>
+                        <fo:block>Kataster der belasteten Standorte im Bereich des Militärs</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container>
+            <fo:block>
+               <fo:footnote>
+                  <fo:inline/>
+                  <fo:footnote-body>
+                     <fo:block keep-together.within-column="always">
+                        <fo:block-container margin-top="0mm"
+                                            margin-bottom="5mm"
+                                            font-weight="400"
+                                            font-size="6.5pt"
+                                            line-height="8.5pt"
+                                            font-family="Cadastra"
+                                            background-color="yellowgreen">
+                           <fo:table table-layout="fixed" width="100%">
+                              <fo:table-column column-width="87mm"/>
+                              <fo:table-column column-width="87mm"/>
+                              <fo:table-body>
+                                 <fo:table-row vertical-align="top">
+                                    <fo:table-cell padding-right="1.5mm">
+                                       <fo:block font-weight="700">Allgemeine Informationen</fo:block>
+                                       <fo:block>Der Inhalt des ÖREB-Katasters wird als bekannt vorausgesetzt. Der Kanton Nidwalden ist für die Genauigkeit und Verlässlichkeit der gesetzgebenden Dokumente in elektronischer Form nicht haftbar. Der Auszug hat rein informativen Charakter und begründet insbesondere keine Rechte und Pflichten. Rechtsverbindlich sind diejenigen Dokumente, welche rechtskräftig verabschiedet oder veröffentlicht worden sind. Mit der Beglaubigung des Auszugs wird die Übereinstimmung dieses mit dem Kataster zum Zeitpunkt der Auszugserstellung bestätigt.</fo:block>
+                                       <fo:block margin-top="2.2mm" font-weight="700">Grundlagedaten</fo:block>
+                                       <fo:block>Daten der amtlichen Vermessung, Nachführungsstand 12.12.2018</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding-left="1.5mm">
+                                       <fo:block/>
+                                       <fo:block font-weight="700">Haftausschluss Kataster der belasteten Standorte</fo:block>
+                                       <fo:block>
+                Der Kataster der belasteten Standorte (KbS) wurde anhand der vom
+                Bundesamt für Umwelt BAFU festgelegten Kriterien erstellt und wird
+                fortwährend aufgrund neuer Erkenntnisse (z.B. Untersuchungen)
+                aktualisiert. Die im KbS eingetragenen Flächen können vom
+                tatsächlichen Ausmass der Belastung abweichen. Erscheint ein
+                Grundstück nicht im KbS, besteht keine absolute Gewähr, dass das
+                Areal frei von jeglichen Abfall- oder Schadstoffbelastungen ist.
+                Bahnbetrieblich, militärisch und für die Luftfahrt genutzte
+                Standorte liegen im Zuständigkeitsbereich des Bundes und sind im
+                vorliegenden kantonalen KbS nur teilweise dargestellt. Für weitere
+                Informationen wenden Sie sich bitte an die kantonale
+                Altlastenfachstelle: afu@nw.ch
+              </fo:block>
+                                       <fo:block margin-top="2.2mm">
+                                          <fo:table table-layout="fixed" width="100%">
+                                             <fo:table-column column-width="35mm"/>
+                                             <fo:table-column column-width="40mm"/>
+                                             <fo:table-body>
+                                                <fo:table-row vertical-align="top">
+                                                   <fo:table-cell>
+                                                      <fo:block font-weight="700">Um einen aktualisierten Auszug aus dem ÖREB-Kataster zu erhalten, scannen Sie bitte den QR-Code.</fo:block>
+                                                   </fo:table-cell>
+                                                   <fo:table-cell padding-left="4mm">
+                                                      <fo:block>
+                                                         <fo:external-graphic width="20mm"
+                                                                              height="20mm"
+                                                                              content-width="scale-to-fit"
+                                                                              content-height="scale-to-fit"
+                                                                              src="url('data:image/png;base64,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')"/>
+                                                      </fo:block>
+                                                   </fo:table-cell>
+                                                </fo:table-row>
+                                             </fo:table-body>
+                                          </fo:table>
+                                       </fo:block>
+                                    </fo:table-cell>
+                                 </fo:table-row>
+                              </fo:table-body>
+                           </fo:table>
+                        </fo:block-container>
+                     </fo:block>
+                  </fo:footnote-body>
+               </fo:footnote>
+            </fo:block>
+         </fo:block-container>
+      </fo:flow>
    </fo:page-sequence>
 </fo:root>
