@@ -290,6 +290,7 @@
             </fo:block-container>
 
             <fo:block-container>
+              <xsl:value-of select="data:RealEstate/data:Limit"/>
             <fo:block>
               <fo:footnote>
                 <fo:inline/>
