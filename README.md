@@ -33,6 +33,8 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH667432068228.xml -xsl:
 
 ```
 https://oereb.gis-daten.ch/oereb/extract/reduced/xml/CH907705273474
+https://oereb.gis-daten.ch/oereb/extract/reduced/xml/CH527898340565
+CH527898340565
 
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH907705273474.xml -xsl:oereb_title_page.xslt -o:CH907705273474.fo
 ../../../apps/fop-2.3/fop/fop -fo CH907705273474.fo -pdf CH907705273474_.pdf -c fop.xconf
