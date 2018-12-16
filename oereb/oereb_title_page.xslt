@@ -6,9 +6,9 @@
     <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <fo:layout-master-set>
         <fo:simple-page-master master-name="mainPage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="12mm" margin-left="18mm" margin-right="18mm"> 
-          <fo:region-body margin-top="30mm" background-color="yellow"/>
+          <fo:region-body margin-top="30mm" background-color="transparent"/>
           <fo:region-before extent="30mm" background-color="transparent"/>
-          <fo:region-after extent="3mm" background-color="khaki"/>
+          <fo:region-after extent="3mm" background-color="transparent"/>
         </fo:simple-page-master>
       </fo:layout-master-set>
     <fo:page-sequence master-reference="mainPage" id="page-sequence-id">
@@ -99,12 +99,12 @@
         </fo:static-content>
         <fo:flow flow-name="xsl-region-body">
           <!--font size should be 18pt but that seems to large and will lead to non-directive conform line break behaviour-->
-          <fo:block-container height="28mm" background-color="green">
+          <fo:block-container height="28mm" background-color="transparent">
             <fo:block line-height="21pt" linefeed-treatment="preserve" font-weight="700" font-size="17.7pt" font-family="Cadastra">Auszug aus dem Kataster der&#x000A;öffentlich-rechtlichen Eigentumsbeschränkungen&#x000A;(ÖREB-Kataster)</fo:block>
           </fo:block-container>            
           <!--<xsl:apply-templates/>-->
 
-            <fo:block-container height="109mm" background-color="gold">
+            <fo:block-container height="109mm" background-color="transparent">
               <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                 <fo:external-graphic border="0.2pt solid black" width="174mm" height="99mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit">
                   <xsl:attribute name="src">
@@ -117,7 +117,7 @@
               </fo:block>
             </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="orange">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="106mm"/>
@@ -166,7 +166,7 @@
               </fo:table>
             </fo:block-container>
 
-            <fo:block-container margin-top="10mm" font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aquamarine">
+            <fo:block-container margin-top="10mm" font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="106mm"/>
@@ -199,11 +199,11 @@
               </fo:table>
             </fo:block-container>
 
-          <fo:block-container height="13mm" background-color="green">
+          <fo:block-container height="13mm" background-color="transparent">
             <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra">Übersicht ÖREB-Themen</fo:block>
           </fo:block-container>            
 
-          <fo:block-container background-color="indianred">
+          <fo:block-container background-color="transparent">
             <fo:block line-height="11.5pt" linefeed-treatment="preserve" font-weight="700" font-size="8.5pt" font-family="Cadastra">Eigentumsbeschränkungen, welche das Grundstück <xsl:value-of select="data:RealEstate/data:Number"/> in <xsl:value-of select="data:RealEstate/data:Municipality"/> betreffen</fo:block>
           </fo:block-container>            
 
@@ -213,7 +213,7 @@
               </fo:block>
             </fo:block-container>
 
-            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="orange">
+            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="7mm"/>
                 <fo:table-column column-width="167mm"/>
@@ -238,7 +238,7 @@
               </fo:table>
             </fo:block-container>
 
-          <fo:block-container background-color="indianred">
+          <fo:block-container background-color="transparent">
             <fo:block line-height="11.5pt" linefeed-treatment="preserve" font-weight="700" font-size="8.5pt" font-family="Cadastra">Eigentumsbeschränkungen, welche das Grundstück nicht betreffen</fo:block>
           </fo:block-container>            
 
@@ -248,7 +248,7 @@
               </fo:block>
             </fo:block-container>
 
-            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="orange">
+            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-body>
                   <xsl:for-each select="data:NotConcernedTheme">
@@ -263,7 +263,7 @@
               </fo:table>
             </fo:block-container>
 
-          <fo:block-container background-color="indianred">
+          <fo:block-container background-color="transparent">
             <fo:block line-height="11.5pt" linefeed-treatment="preserve" font-weight="700" font-size="8.5pt" font-family="Cadastra">Allfällige Eigentumsbeschränkungen, zu denen noch keine Daten vorhanden sind</fo:block>
           </fo:block-container>            
 
@@ -274,7 +274,7 @@
             </fo:block-container>
 
 <!-- margin-bottom ist heuristisch -->
-            <fo:block-container margin-bottom="20mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="orange">
+            <fo:block-container margin-bottom="20mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-body>
                   <xsl:for-each select="data:ThemeWithoutData">
@@ -296,7 +296,7 @@
                 <fo:inline/>
                 <fo:footnote-body>
                   <fo:block keep-together.within-column="always">
-                    <fo:block-container margin-top="0mm" margin-bottom="5mm" font-weight="400" font-size="6.5pt" line-height="8.5pt" font-family="Cadastra" background-color="yellowgreen">
+                    <fo:block-container margin-top="0mm" margin-bottom="5mm" font-weight="400" font-size="6.5pt" line-height="8.5pt" font-family="Cadastra" background-color="transparent">
                       <fo:table table-layout="fixed" width="100%">
                         <fo:table-column column-width="87mm"/>
                         <fo:table-column column-width="87mm"/>
@@ -350,6 +350,45 @@
             </fo:block>
             </fo:block-container>
 
+<!--
+            <xsl:for-each select="data:RealEstate/data:RestrictionOnLandownership">
+              <fo:block-container height="13mm" background-color="green">
+                <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
+                <fo:block line-height="18pt" linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
+              </fo:block-container>            
+            </xsl:for-each> 
+-->
+<!-- Die grosse Frage: Nach was gruppieren? So wie es ausssieht, kann man anhand des Inhaltes des XML nicht auf das gewünschte Resultat im PDF eines Kantons schliessen, z.B. falls kein Subthema vorhanden ist, dann gruppieren über Thema.-->
+            <xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:Theme/data:Code">
+            <!-- TODO: sort -->
+
+              <fo:block-container height="13mm" background-color="green">
+                <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
+              </fo:block-container>            
+      
+              <xsl:for-each select="current-group()">
+                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
+
+<!--
+                <fo:block-container height="109mm" background-color="yellowgreen">
+                  <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                    <fo:external-graphic border="0.2pt solid black" width="174mm" height="99mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit">
+                      <xsl:attribute name="src">
+                        <xsl:text>url('data:</xsl:text>
+                        <xsl:text>image/png;base64,</xsl:text>
+                        <xsl:value-of select="data:Map/data:Image"/>
+                        <xsl:text>')</xsl:text>
+                      </xsl:attribute>
+                    </fo:external-graphic>
+                  </fo:block>
+                </fo:block-container>
+                -->
+
+              </xsl:for-each>
+
+
+            </xsl:for-each-group>
+        
         </fo:flow>
       </fo:page-sequence>
     </fo:root>
