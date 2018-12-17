@@ -39,7 +39,23 @@ CH527898340565
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH907705273474.xml -xsl:oereb_title_page.xslt -o:CH907705273474.fo
 ../../../apps/fop-2.3/fop/fop -fo CH907705273474.fo -pdf CH907705273474_.pdf -c fop.xconf
 
+
+(Zwei Grundnutzungstypen -> wegen Distinct)
+java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH527898340565.xml -xsl:oereb_title_page.xslt -o:CH527898340565.fo
+../../../apps/fop-2.3/fop/fop -fo CH527898340565.fo -pdf CH527898340565_.pdf -c fop.xconf
+
 ```
+
+## Distinct-Problematik
+
+Eine Lösung ist via distinct-values(current-group()/.....). Das ist aber mühsam, weil dann nicht ein Node verfügbar ist, sondern nur der AtomicValue.
+```
+              <xsl:for-each select="distinct-values(current-group()/data:Map/data:Image)">
+                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra">abc</fo:block>
+              </xsl:for-each>
+```
+
+
 
 ## TODO
 - DISTINCT der Dokumente pro Gruppe (wie im statischen Auszug). Für Verifikation ist das hier aber einfacher zu lesen.

@@ -366,25 +366,31 @@
                 <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
               </fo:block-container>            
       
-              <xsl:for-each select="current-group()">
+              <!-- Für das Megen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
+              <!-- Wäre es nicht besser, wenn nach einem Sachattribut gruppiert werden kann? Bei NW nicht möglich. -->
+              <xsl:for-each-group select="current-group()" group-by="data:Map/data:Image">
                 <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
+              </xsl:for-each-group>
 
-<!--
-                <fo:block-container height="109mm" background-color="yellowgreen">
-                  <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                    <fo:external-graphic border="0.2pt solid black" width="174mm" height="99mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit">
-                      <xsl:attribute name="src">
-                        <xsl:text>url('data:</xsl:text>
-                        <xsl:text>image/png;base64,</xsl:text>
-                        <xsl:value-of select="data:Map/data:Image"/>
-                        <xsl:text>')</xsl:text>
-                      </xsl:attribute>
-                    </fo:external-graphic>
-                  </fo:block>
-                </fo:block-container>
-                -->
-
+              <xsl:for-each select="current-group()">
+                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra" background-color="wheat"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
               </xsl:for-each>
+
+              <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra" background-color="gold"><xsl:value-of select="data:Map/data:LegendAtWeb"/></fo:block>
+
+              <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='LegalProvision']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="9pt" font-family="Cadastra" background-color="pink"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></fo:block>
+              </xsl:for-each-group>
+
+              <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Law']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="9pt" font-family="Cadastra" background-color="yellowgreen"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></fo:block>
+              </xsl:for-each-group> 
+
+
+              <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Hint']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="9pt" font-family="Cadastra" background-color="turquoise"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></fo:block>
+              </xsl:for-each-group> 
+
 
 
             </xsl:for-each-group>
