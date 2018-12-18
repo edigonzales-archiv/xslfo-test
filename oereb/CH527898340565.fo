@@ -953,7 +953,7 @@
                      <fo:table-cell>
                         <fo:block font-weight="700">Vollständige Legende</fo:block>
                      </fo:table-cell>
-                     <fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
                         <fo:block font-size="6.5pt" color="rgb(76,143,186)">https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
@@ -1279,7 +1279,7 @@
                      <fo:table-cell>
                         <fo:block font-weight="700">Vollständige Legende</fo:block>
                      </fo:table-cell>
-                     <fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
                         <fo:block font-size="6.5pt" color="rgb(76,143,186)">https://www.gis-daten.ch/docs/tr/nw/legenden/oereb/nutzungsplanung/nw_zonenplan_laermempfindlichkeitsstufen.pdf</fo:block>
                      </fo:table-cell>
                   </fo:table-row>

@@ -524,7 +524,7 @@
                   </fo:table-row>
 
                   <xsl:for-each-group select="current-group()/data:Map" group-by="data:LegendAtWeb">
-                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend.-->
+                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
                   <xsl:sort lang="de" order="descending" select="data:LegendAtWeb"/>
                   <xsl:if test="not(normalize-space(data:LegendAtWeb)='')">
 
@@ -537,7 +537,7 @@
                           <fo:block>aaa</fo:block>
                         </xsl:if>
                       </fo:table-cell>
-                      <fo:table-cell>
+                      <fo:table-cell line-height="8.5pt" display-align="center">
                         <fo:block font-size="6.5pt" color="rgb(76,143,186)"><xsl:value-of select="data:LegendAtWeb"/></fo:block>
                       </fo:table-cell>
                     </fo:table-row>
