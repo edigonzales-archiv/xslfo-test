@@ -6,7 +6,7 @@
     <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <fo:layout-master-set>
         <fo:simple-page-master master-name="mainPage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="12mm" margin-left="18mm" margin-right="18mm"> 
-          <fo:region-body margin-top="30mm" background-color="transparent"/>
+          <fo:region-body margin-top="30mm" margin-bottom="5mm" background-color="transparent"/>
           <fo:region-before extent="30mm" background-color="transparent"/>
           <fo:region-after extent="3mm" background-color="transparent"/>
         </fo:simple-page-master>
@@ -296,7 +296,7 @@
                 <fo:inline/>
                 <fo:footnote-body>
                   <fo:block keep-together.within-column="always">
-                    <fo:block-container margin-top="0mm" margin-bottom="5mm" font-weight="400" font-size="6.5pt" line-height="8.5pt" font-family="Cadastra" background-color="transparent">
+                    <fo:block-container margin-top="0mm" margin-bottom="0mm" font-weight="400" font-size="6.5pt" line-height="8.5pt" font-family="Cadastra" background-color="transparent">
                       <fo:table table-layout="fixed" width="100%">
                         <fo:table-column column-width="87mm"/>
                         <fo:table-column column-width="87mm"/>
@@ -378,7 +378,7 @@
                 <fo:table-column column-width="20mm"/>
                 <fo:table-column column-width="17mm"/>
                 <fo:table-body>
-                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="11.5pt" >
+                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm" >
                     <fo:table-cell>
                       <fo:block></fo:block>
                     </fo:table-cell>
@@ -397,34 +397,166 @@
                   </fo:table-row>
               <!-- Für das Mergen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
               <!-- Wäre es nicht besser, wenn nach einem Sachattribut gruppiert werden kann? Bei NW nicht möglich. -->
-                  <xsl:for-each-group select="current-group()" group-by="data:Map/data:Image">
+                  <xsl:for-each-group select="current-group()" group-by="data:TypeCode">
+                  <xsl:sort order="ascending" select="data:Information/data:LocalisedText/data:Text"/>
                     <!--<fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>-->
-
-                  <fo:table-row font-weight="400" border-bottom="0.2pt solid black" vertical-align="middle" line-height="11.5pt" >
-                    <fo:table-cell>
-                      <fo:block font-weight="700">Legende beteiligter Objekte</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block></fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="left">
-                      <fo:block>Typ</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="right">
-                      <!--if areashare m2-->
-                      <fo:block line-height-shift-adjustment="disregard-shifts"><xsl:value-of select="format-number(data:AreaShare, &quot;#'###&quot;, &quot;swiss&quot;)"/> m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline></fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="right">
-                      <fo:block><xsl:value-of select="data:PartInPercent"/></fo:block>
-                    </fo:table-cell>
-                  </fo:table-row>
-
+                    <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm" >
+                      <fo:table-cell>
+                        <xsl:if test="position()=1">
+                          <fo:block font-weight="700">Legende beteiligter Objekte</fo:block>
+                        </xsl:if>
+                        <xsl:if test="position()!=1">
+                          <fo:block></fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell display-align="center">
+                        <!-- padding="1mm" ist heuristisch -->
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                          <fo:external-graphic width="6mm" height="3mm" content-width="scale-to-fit" content-height="scale-to-fit" scaling="uniform" >
+                            <xsl:attribute name="src">
+                              <xsl:text>url('data:</xsl:text>
+                              <xsl:text>image/png;base64,</xsl:text>
+                              <xsl:value-of select="data:Symbol"/>
+                              <xsl:text>')</xsl:text>
+                            </xsl:attribute>
+                          </fo:external-graphic>
+                        </fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell text-align="left">
+                        <!--<fo:block><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>-->
+                        <!-- Zum Testen der Summenbildung und Gruppierung-->
+                        <fo:block><xsl:value-of select="data:TypeCode"/></fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell text-align="right">
+                        <xsl:if test="data:AreaShare">
+                          <fo:block line-height-shift-adjustment="disregard-shifts"><xsl:value-of select="format-number(sum(current-group()/data:AreaShare), &quot;#'###&quot;, &quot;swiss&quot;)"/> m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline></fo:block>
+                        </xsl:if>
+                        <xsl:if test="data:LengthShare">
+                          <fo:block line-height-shift-adjustment="disregard-shifts"><xsl:value-of select="format-number(sum(current-group()/data:LengthShare), &quot;#'###&quot;, &quot;swiss&quot;)"/> m</fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell text-align="right">
+                        <fo:block><xsl:value-of select="format-number(sum(current-group()/data:PartInPercent), &quot;#'###.#&quot;, &quot;swiss&quot;)"/>%</fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
                   </xsl:for-each-group>
-
-
                 </fo:table-body>
               </fo:table>
             </fo:block-container>
+
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="68mm"/>
+                <fo:table-column column-width="10mm"/>
+                <fo:table-column column-width="59mm"/>
+                <fo:table-column column-width="20mm"/>
+                <fo:table-column column-width="17mm"/>
+                <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm" >
+                    <fo:table-cell>
+                      <fo:block/>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block/>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block/>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block/>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block/>
+                    </fo:table-cell>
+                  </fo:table-row>
+
+                  <xsl:for-each-group select="current-group()/data:Map/data:OtherLegend" group-by="data:TypeCode">
+                  <xsl:sort lang="de" order="ascending" select="data:LegendText/data:LocalisedText/data:Text"/>
+                    <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm" >
+                      <fo:table-cell>
+                        <xsl:if test="position()=1">
+                          <fo:block font-weight="700">Übrige Legende (im sichtbaren Bereich)</fo:block>
+                        </xsl:if>
+                        <xsl:if test="position()!=1">
+                          <fo:block></fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell display-align="center">
+                        <!-- padding="1mm" ist heuristisch -->
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                          <fo:external-graphic width="6mm" height="3mm" content-width="scale-to-fit" content-height="scale-to-fit" scaling="uniform" >
+                            <xsl:attribute name="src">
+                              <xsl:text>url('data:</xsl:text>
+                              <xsl:text>image/png;base64,</xsl:text>
+                              <xsl:value-of select="data:Symbol"/>
+                              <xsl:text>')</xsl:text>
+                            </xsl:attribute>
+                          </fo:external-graphic>
+                        </fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell text-align="left">
+                        <fo:block><xsl:value-of select="data:LegendText/data:LocalisedText/data:Text"/></fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell text-align="right">
+                      <fo:block></fo:block>
+                        </fo:table-cell>
+                      <fo:table-cell text-align="right">
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                  </xsl:for-each-group>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="68mm"/>
+                <fo:table-column column-width="106mm"/>
+                <fo:table-body>
+                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                  </fo:table-row>
+
+                  <xsl:for-each-group select="current-group()/data:Map" group-by="data:LegendAtWeb">
+                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend.-->
+                  <xsl:sort lang="de" order="descending" select="data:LegendAtWeb"/>
+                  <xsl:if test="not(normalize-space(data:LegendAtWeb)='')">
+
+                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                      <fo:table-cell>
+                        <xsl:if test="position()=1">
+                          <fo:block font-weight="700">Vollständige Legende</fo:block>
+                        </xsl:if>
+                        <xsl:if test="position()!=1">
+                          <fo:block>aaa</fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block font-size="6.5pt" color="rgb(76,143,186)"><xsl:value-of select="data:LegendAtWeb"/></fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                    </xsl:if>
+                  </xsl:for-each-group>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+
+
+                  <fo:block-container>
+                    <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                      <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+                    </fo:block>
+                  </fo:block-container>
+
+
+
+
       
               <!-- Für das Mergen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
               <!-- Wäre es nicht besser, wenn nach einem Sachattribut gruppiert werden kann? Bei NW nicht möglich. -->

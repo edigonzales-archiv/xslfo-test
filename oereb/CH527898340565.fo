@@ -10,7 +10,9 @@
                              margin-bottom="12mm"
                              margin-left="18mm"
                              margin-right="18mm">
-         <fo:region-body margin-top="30mm" background-color="transparent"/>
+         <fo:region-body margin-top="30mm"
+                         margin-bottom="5mm"
+                         background-color="transparent"/>
          <fo:region-before extent="30mm" background-color="transparent"/>
          <fo:region-after extent="3mm" background-color="transparent"/>
       </fo:simple-page-master>
@@ -441,7 +443,7 @@
                   <fo:footnote-body>
                      <fo:block keep-together.within-column="always">
                         <fo:block-container margin-top="0mm"
-                                            margin-bottom="5mm"
+                                            margin-bottom="0mm"
                                             font-weight="400"
                                             font-size="6.5pt"
                                             line-height="8.5pt"
@@ -535,7 +537,7 @@
                <fo:table-body>
                   <fo:table-row border-bottom="0.2pt solid black"
                                 vertical-align="middle"
-                                line-height="11.5pt">
+                                line-height="5mm">
                      <fo:table-cell>
                         <fo:block/>
                      </fo:table-cell>
@@ -552,92 +554,419 @@
                         <fo:block font-size="6.5pt">Anteil in %</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
-                  <fo:table-row font-weight="400"
-                                border-bottom="0.2pt solid black"
-                                vertical-align="middle"
-                                line-height="11.5pt">
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
                      <fo:table-cell>
-                        <fo:block margin-top="2mm" font-weight="700">Legende beteiligter Objekte</fo:block>
+                        <fo:block font-weight="700">Legende beteiligter Objekte</fo:block>
                      </fo:table-cell>
-                     <fo:table-cell>
-                        <fo:block/>
-                     </fo:table-cell>
-                     <fo:table-cell text-align="left">
-                        <fo:block>Typ</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell text-align="right">
-                        <fo:block line-height-shift-adjustment="disregard-shifts">255 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF1JREFUOE/V0DEKgEAQBMH5ow8y8d+KgollMnrJNUzS0BtsTtZt2Uds6LF7Ex68/lBAjyihR5TQI0roESX0iBJ6RAk9ooQeUUKPKKFHlNAjSuif4u8mOPj2h69LkgM8l0vL4leqDwAAAABJRU5ErkJggg==')"/>
                         </fo:block>
                      </fo:table-cell>
-                     <fo:table-cell text-align="right">
-                        <fo:block>44</fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-                  <fo:table-row font-weight="400"
-                                border-bottom="0.2pt solid black"
-                                vertical-align="middle"
-                                line-height="11.5pt">
-                     <fo:table-cell>
-                        <fo:block margin-top="2mm" font-weight="700">Legende beteiligter Objekte</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell>
-                        <fo:block/>
-                     </fo:table-cell>
                      <fo:table-cell text-align="left">
-                        <fo:block>Typ</fo:block>
+                        <fo:block>b5246f1b:L:6</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
                         <fo:block line-height-shift-adjustment="disregard-shifts">576 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
                         </fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
-                        <fo:block>100</fo:block>
+                        <fo:block>100.0%</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
-                  <fo:table-row font-weight="400"
-                                border-bottom="0.2pt solid black"
-                                vertical-align="middle"
-                                line-height="11.5pt">
-                     <fo:table-cell>
-                        <fo:block margin-top="2mm" font-weight="700">Legende beteiligter Objekte</fo:block>
-                     </fo:table-cell>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
                      <fo:table-cell>
                         <fo:block/>
                      </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAG1JREFUOE/VzkEKgDAMRNHcxoX3v4yXUQYjiCY1M+nGD4Vi01ftP23LuneXU2evD8Wue1PA+502+JxvgdGsDGZzEjiaoUH6nHo9qAxWMFQCqxj6BBkMDUEWQymoYCgEVQyFoG+l0j9UlzOzMzsAWKum8OTVwzcAAAAASUVORK5CYII=')"/>
+                        </fo:block>
+                     </fo:table-cell>
                      <fo:table-cell text-align="left">
-                        <fo:block>Typ</fo:block>
+                        <fo:block>63e3bac9:L:8</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
                         <fo:block line-height-shift-adjustment="disregard-shifts">576 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
                         </fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
-                        <fo:block>100</fo:block>
+                        <fo:block>100.0%</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
-                  <fo:table-row font-weight="400"
-                                border-bottom="0.2pt solid black"
-                                vertical-align="middle"
-                                line-height="11.5pt">
-                     <fo:table-cell>
-                        <fo:block margin-top="2mm" font-weight="700">Legende beteiligter Objekte</fo:block>
-                     </fo:table-cell>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
                      <fo:table-cell>
                         <fo:block/>
                      </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAIBJREFUOE/VjEEKwEAQwub/j+rXtgQpsuBBlvbQQC6izq9YL7ix1nUue92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl43JhZb2evGxGIre92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl435glP/YKZG7xIphxLkxzuAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
                      <fo:table-cell text-align="left">
-                        <fo:block>Typ</fo:block>
+                        <fo:block>161e2705:L:0</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block line-height-shift-adjustment="disregard-shifts">510 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block>88.0%</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAIBJREFUOE/VjEEKwEAQwuZ3/f+LtgQpsuBBlvbQQC6izq9YL7ix1nUue92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl43JhZb2evGxGIre92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl435glP/YKZG+TiPYV+NKlBAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>161e2705:L:1</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block line-height-shift-adjustment="disregard-shifts">642 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block>112.0%</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF9JREFUOE+ljEEKwEAQg+b/n24p9LSGCbJCLoKZg0eukqJtlRRtq6Ro20dyV+AQQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIe4pZ0eLq2Soq2VVK0rZKibT8zLytYv0HWHDfhAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>d2d7fafd:L:5</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
                         <fo:block line-height-shift-adjustment="disregard-shifts">576 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
                         </fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
-                        <fo:block>100</fo:block>
+                        <fo:block>100.0%</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                </fo:table-body>
             </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="10mm"/>
+               <fo:table-column column-width="59mm"/>
+               <fo:table-column column-width="20mm"/>
+               <fo:table-column column-width="17mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Übrige Legende (im sichtbaren Bereich)</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAG1JREFUOE/VzkEKgDAMRNHcxoX3v4yXUQYjiCY1M+nGD4Vi01ftP23LuneXU2evD8Wue1PA+502+JxvgdGsDGZzEjiaoUH6nHo9qAxWMFQCqxj6BBkMDUEWQymoYCgEVQyFoG+l0j9UlzOzMzsAWKum8OTVwzcAAAAASUVORK5CYII=')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Gefahrenzone 3 (Hinweisbereich)</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF9JREFUOE+ljEEKwEAQg+b/n24p9LSGCbJCLoKZg0eukqJtlRRtq6Ro20dyV+AQQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIe4pZ0eLq2Soq2VVK0rZKibT8zLytYv0HWHDfhAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Gestaltungsplan</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADBJREFUOE9jGDrA39//P6UYahQEYAiQCEYNHDWQDDBq4KiBZACsBlKCocZQGzAwAAD1M3kV9hYXFwAAAABJRU5ErkJggg==')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Kundenintensive Nutzungen</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAEVJREFUOE/tjDEKADAIxPz/o225QpxcFLsZyKJc7BdnyCB7dgzewd1bslcINliTvUKwwZrsFYIN1mSvEPwJDhhkz47TmF0D04pSvuK0XwAAAABJRU5ErkJggg==')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>übriges Gebiet</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAHRJREFUOE/VzDEKw1AQA9F//0s7iFEQbsdOkQfbrJDOX7leuJvrifSZmUZO+sxMIyd9ZqaRkz4z08hJn5lp5KTPzDRy0mdmGjnpMzONnPSZmUZO+sxMIyd9ZqaRkz4z08hJn5lp5KTPzDRy0mdmvk97v3DOB82Ov2s0/xffAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Übriges Gemeindegebiet</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAIBJREFUOE/VjEEKwEAQwub/j+rXtgQpsuBBlvbQQC6izq9YL7ix1nUue92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl43JhZb2evGxGIre92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl435glP/YKZG7xIphxLkxzuAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Wohnzone 3</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAIBJREFUOE/VjEEKwEAQwuZ3/f+LtgQpsuBBlvbQQC6izq9YL7ix1nUue92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl43JhZb2evGxGIre92YWGxlrxsTi63sdWNisZW9bkwstrLXjYnFVva6MbHYyl435glP/YKZG+TiPYV+NKlBAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Wohnzone 4</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAINJREFUOE/VjMEJwDAAAjN7h+hgXSjlkCIFHxLaRw7uI+rYivmBL+Z1Hsuy142JxVb2ujGx2MpeNyYWW9nrxsRiK3vdmFhsZa8bE4ut7HVjYrGVvW5MLLay142JxVb2ujGx2MpeNyYWW9nrxsRiK3vdmFhsZa8bE4ut7HVjnnDVPxjjBtBjzakOh3y8AAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Zentrumszone</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF1JREFUOE/V0DEKgEAQBMH5ow8y8d+KgollMnrJNUzS0BtsTtZt2Uds6LF7Ex68/lBAjyihR5TQI0roESX0iBJ6RAk9ooQeUUKPKKFHlNAjSuif4u8mOPj2h69LkgM8l0vL4leqDwAAAABJRU5ErkJggg==')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Zone mit Sondernutzungsplanpflicht</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Vollständige Legende</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block font-size="6.5pt" color="rgb(76,143,186)">https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container>
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
          </fo:block-container>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
@@ -778,7 +1107,7 @@
                <fo:table-body>
                   <fo:table-row border-bottom="0.2pt solid black"
                                 vertical-align="middle"
-                                line-height="11.5pt">
+                                line-height="5mm">
                      <fo:table-cell>
                         <fo:block/>
                      </fo:table-cell>
@@ -795,29 +1124,175 @@
                         <fo:block font-size="6.5pt">Anteil in %</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
-                  <fo:table-row font-weight="400"
-                                border-bottom="0.2pt solid black"
-                                vertical-align="middle"
-                                line-height="11.5pt">
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
                      <fo:table-cell>
-                        <fo:block margin-top="2mm" font-weight="700">Legende beteiligter Objekte</fo:block>
+                        <fo:block font-weight="700">Legende beteiligter Objekte</fo:block>
                      </fo:table-cell>
-                     <fo:table-cell>
-                        <fo:block/>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAINJREFUOE/VjDEKwDAAAvOT/n/r/zqkHFKk4CChHXJwi6hjK+YHvpjXeSzLXjcmFlvZ68bEYit73ZhYbGWvGxOLrex1Y2Kxlb1uTCy2steNicVW9roxsdjKXjcmFlvZ68bEYit73ZhYbGWvGxOLrex1Y2Kxlb1uTCy2steNecJV/2CMG+aDsYkwXXa3AAAAAElFTkSuQmCC')"/>
+                        </fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="left">
-                        <fo:block>Typ</fo:block>
+                        <fo:block>ad016c50:L:9</fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
                         <fo:block line-height-shift-adjustment="disregard-shifts">576 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
                         </fo:block>
                      </fo:table-cell>
                      <fo:table-cell text-align="right">
-                        <fo:block>100</fo:block>
+                        <fo:block>100.0%</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                </fo:table-body>
             </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="10mm"/>
+               <fo:table-column column-width="59mm"/>
+               <fo:table-column column-width="20mm"/>
+               <fo:table-column column-width="17mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Übrige Legende (im sichtbaren Bereich)</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAINJREFUOE/VjDEKwDAAAvOT/n/r/zqkHFKk4CChHXJwi6hjK+YHvpjXeSzLXjcmFlvZ68bEYit73ZhYbGWvGxOLrex1Y2Kxlb1uTCy2steNicVW9roxsdjKXjcmFlvZ68bEYit73ZhYbGWvGxOLrex1Y2Kxlb1uTCy2steNecJV/2CMG+aDsYkwXXa3AAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Empfindlichkeitsstufe II</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAINJREFUOE/VjMEJwDAAArNN5+vqXSDlkCIFHxLaRw7uI+rYivmBL+Z1Hsuy142JxVb2ujGx2MpeNyYWW9nrxsRiK3vdmFhsZa8bE4ut7HVjYrGVvW5MLLay142JxVb2ujGx2MpeNyYWW9nrxsRiK3vdmFhsZa8bE4ut7HVjnnDVPxjjBg26eUmpNb1OAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Empfindlichkeitsstufe III</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABZJREFUOE9jGAWjYBSMglEwCqgCGBgABlQAATocjk8AAAAASUVORK5CYII=')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Keine Empfindlicheitsstufe</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Vollständige Legende</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block font-size="6.5pt" color="rgb(76,143,186)">https://www.gis-daten.ch/docs/tr/nw/legenden/oereb/nutzungsplanung/nw_zonenplan_laermempfindlichkeitsstufen.pdf</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container>
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
          </fo:block-container>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
