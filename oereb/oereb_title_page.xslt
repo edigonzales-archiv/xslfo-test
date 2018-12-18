@@ -364,9 +364,44 @@
 
               <fo:block-container height="13mm" background-color="green">
                 <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
+              </fo:block-container> 
+
+              <fo:block-container height="105mm" background-color="gold">
+                <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm" font-family="Cadastra">Platzhalter unsichtbar</fo:block>
               </fo:block-container>            
+           
+            <fo:block-container font-weight="400" font-size="11.5pt" font-family="Cadastra" background-color="aqua">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="68mm"/>
+                <fo:table-column column-width="10mm"/>
+                <fo:table-column column-width="59mm"/>
+                <fo:table-column column-width="20mm"/>
+                <fo:table-column column-width="17mm"/>
+                <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="11.5pt" >
+                    <fo:table-cell>
+                      <fo:block></fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block></fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell text-align="left">
+                      <fo:block font-size="6.5pt">Typ</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell text-align="right">
+                      <fo:block font-size="6.5pt">Anteil</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell text-align="right">
+                      <fo:block font-size="6.5pt">Anteil in %</fo:block>
+                    </fo:table-cell>
+                  </fo:table-row>
+
+
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
       
-              <!-- Für das Megen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
+              <!-- Für das Mergen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
               <!-- Wäre es nicht besser, wenn nach einem Sachattribut gruppiert werden kann? Bei NW nicht möglich. -->
               <xsl:for-each-group select="current-group()" group-by="data:Map/data:Image">
                 <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
