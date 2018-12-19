@@ -359,7 +359,10 @@
             </xsl:for-each> 
 -->
 <!-- Die grosse Frage: Nach was gruppieren? So wie es ausssieht, kann man anhand des Inhaltes des XML nicht auf das gewünschte Resultat im PDF eines Kantons schliessen, z.B. falls kein Subthema vorhanden ist, dann gruppieren über Thema.-->
-            <xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:Theme/data:Code">
+            <!--<xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:Theme/data:Code">-->
+            <xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:SubTheme">
+            
+            
             <!-- TODO: sort -->
 
               <fo:block-container height="13mm" background-color="green">
@@ -570,22 +573,23 @@
                         <fo:block></fo:block>
                       </fo:table-cell>
                   </fo:table-row>
-
                   <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='LegalProvision']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
                   <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
                   <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
-
                     <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
                       <fo:table-cell>
                         <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Vollständige Legende</fo:block>
+                          <fo:block font-weight="700">Rechtsvorschriften</fo:block>
                         </xsl:if>
                         <xsl:if test="position()!=1">
-                          <fo:block>aaa</fo:block>
+                          <fo:block></fo:block>
                         </xsl:if>
                       </fo:table-cell>
-                      <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
+                      <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">
+                          <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                        </fo:block>
+                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
                         <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
                           <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
                           <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
@@ -598,7 +602,138 @@
               </fo:table>
             </fo:block-container>
 
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="68mm"/>
+                <fo:table-column column-width="106mm"/>
+                <fo:table-body>
+                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                  </fo:table-row>
+                  <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Law']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
+                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                      <fo:table-cell>
+                        <xsl:if test="position()=1">
+                          <fo:block font-weight="700">Gesetzliche Grundlagen</fo:block>
+                        </xsl:if>
+                        <xsl:if test="position()!=1">
+                          <fo:block></fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">
+                          <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                        </fo:block>
+                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
+                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                          <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
+                          <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
+                        </fo:basic-link>
+                        </fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                  </xsl:for-each-group>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+            
+            <xsl:if test="current-group()/data:LegalProvisions[data:DocumentType='Hint']">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="68mm"/>
+                <fo:table-column column-width="106mm"/>
+                <fo:table-body>
+                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                  </fo:table-row>
+                  <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Hint']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
+                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                      <fo:table-cell>
+                        <xsl:if test="position()=1">
+                          <fo:block font-weight="700">Weitere Informationen und Hinweise</fo:block>
+                        </xsl:if>
+                        <xsl:if test="position()!=1">
+                          <fo:block></fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">
+                          <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                        </fo:block>
+                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
+                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                          <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
+                          <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
+                        </fo:basic-link>
+                        </fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                  </xsl:for-each-group>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+            </xsl:if>
 
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="68mm"/>
+                <fo:table-column column-width="106mm"/>
+                <fo:table-body>
+                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                  </fo:table-row>
+                  <xsl:for-each-group select="current-group()/data:ResponsibleOffice" group-by="data:Name">
+                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
+                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                      <fo:table-cell>
+                        <xsl:if test="position()=1">
+                          <fo:block font-weight="700">Zuständige Stelle</fo:block>
+                        </xsl:if>
+                        <xsl:if test="position()!=1">
+                          <fo:block></fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">
+                          <xsl:value-of select="data:Name/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                        </fo:block>
+                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
+                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                          <xsl:attribute name="external-destination"><xsl:value-of select="data:OfficeAtWeb"/></xsl:attribute>
+                          <xsl:value-of select="data:OfficeAtWeb"/>
+                        </fo:basic-link>
+                        </fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                  </xsl:for-each-group>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+            <fo:block-container background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+              </fo:block>
+            </fo:block-container>
 
 
       

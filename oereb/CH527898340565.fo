@@ -654,31 +654,6 @@
                         <fo:block>112.0%</fo:block>
                      </fo:table-cell>
                   </fo:table-row>
-                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
-                     <fo:table-cell>
-                        <fo:block/>
-                     </fo:table-cell>
-                     <fo:table-cell display-align="center">
-                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                           <fo:external-graphic width="6mm"
-                                                height="3mm"
-                                                content-width="scale-to-fit"
-                                                content-height="scale-to-fit"
-                                                scaling="uniform"
-                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF9JREFUOE+ljEEKwEAQg+b/n24p9LSGCbJCLoKZg0eukqJtlRRtq6Ro20dyV+AQQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIe4pZ0eLq2Soq2VVK0rZKibT8zLytYv0HWHDfhAAAAAElFTkSuQmCC')"/>
-                        </fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell text-align="left">
-                        <fo:block>d2d7fafd:L:5</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell text-align="right">
-                        <fo:block line-height-shift-adjustment="disregard-shifts">576 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
-                        </fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell text-align="right">
-                        <fo:block>100.0%</fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
                </fo:table-body>
             </fo:table>
          </fo:block-container>
@@ -992,58 +967,14 @@
                   </fo:table-row>
                   <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
                      <fo:table-cell>
-                        <fo:block font-weight="700">Vollständige Legende</fo:block>
+                        <fo:block font-weight="700">Rechtsvorschriften</fo:block>
                      </fo:table-cell>
-                     <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
-                           <fo:basic-link text-decoration="none"
-                                          color="rgb(76,143,186)"
-                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GP.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GP.pdf</fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                     <fo:table-cell>
-                        <fo:block>aaa</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
-                           <fo:basic-link text-decoration="none"
-                                          color="rgb(76,143,186)"
-                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GRB_anonymisiert.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GRB_anonymisiert.pdf</fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                     <fo:table-cell>
-                        <fo:block>aaa</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
-                           <fo:basic-link text-decoration="none"
-                                          color="rgb(76,143,186)"
-                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_Bericht_Hinweise.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_Bericht_Hinweise.pdf</fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                     <fo:table-cell>
-                        <fo:block>aaa</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
-                           <fo:basic-link text-decoration="none"
-                                          color="rgb(76,143,186)"
-                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19941222_BDB_anonymisiert.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19941222_BDB_anonymisiert.pdf</fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                     <fo:table-cell>
-                        <fo:block>aaa</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bau- und Zonenreglement der Gemeinde Stans:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
                            <fo:basic-link text-decoration="none"
                                           color="rgb(76,143,186)"
                                           external-destination="http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:basic-link>
@@ -1052,6 +983,189 @@
                   </fo:table-row>
                </fo:table-body>
             </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Gesetzliche Grundlagen</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Vollzugsverordnung zum Planungs- und Baugesetz:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.erlasse.ch/pdf/nw/611.11.pdf">http://www.erlasse.ch/pdf/nw/611.11.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Gesetz über die Raumplanung und das öffentliche Baurecht:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.erlasse.ch/pdf/nw/611.1.pdf">http://www.erlasse.ch/pdf/nw/611.1.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Gesetz über den Schutz der Kulturdenkmäler:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.erlasse.ch/pdf/nw/322.2.pdf">http://www.erlasse.ch/pdf/nw/322.2.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Gesetz über den Natur- und Landschaftsschutz :</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.erlasse.ch/pdf/nw/331.1.pdf">http://www.erlasse.ch/pdf/nw/331.1.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bundesgesetz über die Raumplanung:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1">http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Weitere Informationen und Hinweise</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Wichtiger Hinweis zu den Gefahrenzonen resp. Gefahrenkarte (NW):</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Gefahrenkarte/Wichtiger_Hinweis_zu_den_Gefahrenzonen_resp_Gefahrenkarte.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Gefahrenkarte/Wichtiger_Hinweis_zu_den_Gefahrenzonen_resp_Gefahrenkarte.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Zuständige Stelle</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bauamt Stans:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.stans.ch/de/verwaltung/aemter/welcome.php?amt_id=6358">http://www.stans.ch/de/verwaltung/aemter/welcome.php?amt_id=6358</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container background-color="transparent">
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
          </fo:block-container>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
@@ -1065,10 +1179,6 @@
                    font-weight="400"
                    font-size="11pt"
                    font-family="Cadastra">Gefahrenzone (Stans)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra">Sondernutzungsplan Obere Spichermatt</fo:block>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
                    font-size="11pt"
@@ -1103,12 +1213,414 @@
                    font-weight="400"
                    font-size="11pt"
                    font-family="Cadastra"
+                   background-color="gold">https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="9pt"
+                   font-family="Cadastra"
+                   background-color="pink">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="9pt"
+                   font-family="Cadastra"
+                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/611.1.pdf</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="9pt"
+                   font-family="Cadastra"
+                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/611.11.pdf</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="9pt"
+                   font-family="Cadastra"
+                   background-color="yellowgreen">http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="9pt"
+                   font-family="Cadastra"
+                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/322.2.pdf</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="9pt"
+                   font-family="Cadastra"
+                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/331.1.pdf</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="9pt"
+                   font-family="Cadastra"
+                   background-color="turquoise">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Gefahrenkarte/Wichtiger_Hinweis_zu_den_Gefahrenzonen_resp_Gefahrenkarte.pdf</fo:block>
+         <fo:block-container height="13mm" background-color="green">
+            <fo:block page-break-before="always"
+                      line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="15pt"
+                      font-family="Cadastra">Gestaltungsplan (Sondernutzungsplan)</fo:block>
+         </fo:block-container>
+         <fo:block-container height="105mm" background-color="gold">
+            <fo:block font-size="0pt"
+                      padding="0mm"
+                      margin="0mm"
+                      line-height="0mm"
+                      font-family="Cadastra">Platzhalter unsichtbar</fo:block>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="10mm"/>
+               <fo:table-column column-width="59mm"/>
+               <fo:table-column column-width="20mm"/>
+               <fo:table-column column-width="17mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block font-size="6.5pt">Typ</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block font-size="6.5pt">Anteil</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block font-size="6.5pt">Anteil in %</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Legende beteiligter Objekte</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF9JREFUOE+ljEEKwEAQg+b/n24p9LSGCbJCLoKZg0eukqJtlRRtq6Ro20dyV+AQQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIe4pZ0eLq2Soq2VVK0rZKibT8zLytYv0HWHDfhAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>d2d7fafd:L:5</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block line-height-shift-adjustment="disregard-shifts">576 m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block>100.0%</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="10mm"/>
+               <fo:table-column column-width="59mm"/>
+               <fo:table-column column-width="20mm"/>
+               <fo:table-column column-width="17mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Übrige Legende (im sichtbaren Bereich)</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                           <fo:external-graphic width="6mm"
+                                                height="3mm"
+                                                content-width="scale-to-fit"
+                                                content-height="scale-to-fit"
+                                                scaling="uniform"
+                                                src="url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF9JREFUOE+ljEEKwEAQg+b/n24p9LSGCbJCLoKZg0eukqJtlRRtq6Ro20dyV+AQQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIeQoIe4pZ0eLq2Soq2VVK0rZKibT8zLytYv0HWHDfhAAAAAElFTkSuQmCC')"/>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="left">
+                        <fo:block>Gestaltungsplan</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell text-align="right">
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container height="10mm" background-color="blue">
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Rechtsvorschriften</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Sondernutzungsplan Obere Spichermatt Plan:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GP.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GP.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Sondernutzungsplan Obere Spichermatt Gemeinderatsbeschluss:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GRB_anonymisiert.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GRB_anonymisiert.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Sondernutzungsplan Obere Spichermatt Bericht:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_Bericht_Hinweise.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_Bericht_Hinweise.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Sondernutzungsplan Obere Spichermatt Baudirektionsbeschluss:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19941222_BDB_anonymisiert.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19941222_BDB_anonymisiert.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bau- und Zonenreglement der Gemeinde Stans:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Gesetzliche Grundlagen</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Gesetz über die Raumplanung und das öffentliche Baurecht:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.erlasse.ch/pdf/nw/611.1.pdf">http://www.erlasse.ch/pdf/nw/611.1.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bundesgesetz über die Raumplanung:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1">http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Zuständige Stelle</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bauamt Stans:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.stans.ch/de/verwaltung/aemter/welcome.php?amt_id=6358">http://www.stans.ch/de/verwaltung/aemter/welcome.php?amt_id=6358</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container background-color="transparent">
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
+         </fo:block-container>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="11pt"
+                   font-family="Cadastra">Sondernutzungsplan Obere Spichermatt</fo:block>
+         <fo:block linefeed-treatment="preserve"
+                   font-weight="400"
+                   font-size="11pt"
+                   font-family="Cadastra"
                    background-color="wheat">Sondernutzungsplan Obere Spichermatt</fo:block>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
                    font-size="11pt"
                    font-family="Cadastra"
-                   background-color="gold">https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm</fo:block>
+                   background-color="gold"/>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
                    font-size="9pt"
@@ -1143,27 +1655,7 @@
                    font-weight="400"
                    font-size="9pt"
                    font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/611.11.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
                    background-color="yellowgreen">http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/322.2.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/331.1.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="turquoise">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Gefahrenkarte/Wichtiger_Hinweis_zu_den_Gefahrenzonen_resp_Gefahrenkarte.pdf</fo:block>
          <fo:block-container height="13mm" background-color="green">
             <fo:block page-break-before="always"
                       line-height="18pt"
@@ -1403,10 +1895,14 @@
                   </fo:table-row>
                   <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
                      <fo:table-cell>
-                        <fo:block font-weight="700">Vollständige Legende</fo:block>
+                        <fo:block font-weight="700">Rechtsvorschriften</fo:block>
                      </fo:table-cell>
-                     <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bau- und Zonenreglement der Gemeinde Stans (BZR):</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
                            <fo:basic-link text-decoration="none"
                                           color="rgb(76,143,186)"
                                           external-destination="http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:basic-link>
@@ -1415,6 +1911,120 @@
                   </fo:table-row>
                </fo:table-body>
             </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Gesetzliche Grundlagen</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Vollzugsverordnung zum kantonalen Umweltschutzgesetz:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.erlasse.ch/pdf/nw/721.11.pdf">http://www.erlasse.ch/pdf/nw/721.11.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Lärmschutz-Verordnung:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.admin.ch/ch/d/sr/8/814.41.de.pdf?noredirect=1">http://www.admin.ch/ch/d/sr/8/814.41.de.pdf?noredirect=1</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt"> Einführungsgesetz zum Bundesgesetz über den Umweltschutz:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.erlasse.ch/pdf/nw/721.1.pdf">http://www.erlasse.ch/pdf/nw/721.1.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Zuständige Stelle</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell display-align="center">
+                        <fo:block font-size="8.5pt">Bauamt Stans:</fo:block>
+                        <fo:block font-size="6.5pt"
+                                  line-height="8.5pt"
+                                  margin-left="3mm"
+                                  margin-top="-1mm">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.stans.ch/de/verwaltung/aemter/welcome.php?amt_id=6358">http://www.stans.ch/de/verwaltung/aemter/welcome.php?amt_id=6358</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block-container>
+         <fo:block-container background-color="transparent">
+            <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+               <fo:leader leader-pattern="rule"
+                          leader-length="100%"
+                          rule-style="solid"
+                          rule-thickness="0.2pt"/>
+            </fo:block>
          </fo:block-container>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
