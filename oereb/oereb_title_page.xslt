@@ -18,7 +18,6 @@
           <fo:block-container height="28mm" background-color="transparent">
             <fo:block line-height="21pt" linefeed-treatment="preserve" font-weight="700" font-size="17.7pt" font-family="Cadastra">Auszug aus dem Kataster der&#x000A;öffentlich-rechtlichen Eigentumsbeschränkungen&#x000A;(ÖREB-Kataster)</fo:block>
           </fo:block-container>            
-          <!--<xsl:apply-templates/>-->
 
             <fo:block-container height="109mm" background-color="transparent">
               <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
@@ -129,30 +128,8 @@
               </fo:block>
             </fo:block-container>
 
-            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="7mm"/>
-                <fo:table-column column-width="167mm"/>
-                <fo:table-body>
-                  <fo:table-row vertical-align="middle">
-                    <fo:table-cell>
-                      <fo:block margin-top="1mm" margin-bottom="3.8mm" font-weight="700" font-size="6.5pt">Seite</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block/>
-                    </fo:table-cell>
-                  </fo:table-row>
-                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle">
-                    <fo:table-cell height="30mm" >
-                      <fo:block font-weight="400" font-size="6.5pt">Fubar</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block/>
-                    </fo:table-cell>
-                  </fo:table-row>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
+          <!-- print table of contents -->
+          <xsl:apply-templates select="data:RealEstate" mode="toc" />
 
           <fo:block-container background-color="transparent">
             <fo:block line-height="11.5pt" linefeed-treatment="preserve" font-weight="700" font-size="8.5pt" font-family="Cadastra">Eigentumsbeschränkungen, welche das Grundstück nicht betreffen</fo:block>
@@ -189,8 +166,8 @@
               </fo:block>
             </fo:block-container>
 
-<!-- margin-bottom ist heuristisch -->
-            <fo:block-container margin-bottom="20mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="transparent">
+            <!-- margin-bottom ist heuristisch -->
+            <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" line-height="11.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-body>
                   <xsl:for-each select="data:ThemeWithoutData">
@@ -263,588 +240,555 @@
                 </fo:footnote-body>
               </fo:footnote>
             </fo:block>
-            </fo:block-container>
+            </fo:block-container>        
+        </fo:flow>
+      </fo:page-sequence>
+      <!-- print grouped RestrictionOnLandownership pdf pages -->
+      <xsl:apply-templates select="data:RealEstate" mode="sheet"/>
+      <!-- print glossary -->
+      <xsl:call-template name="insertGlossary"/>
+    </fo:root>
+  </xsl:template>
 
-<!-- Die grosse Frage: Nach was gruppieren? So wie es ausssieht, kann man anhand des Inhaltes des XML nicht auf das gewünschte Resultat im PDF eines Kantons schliessen, z.B. falls kein Subthema vorhanden ist, dann gruppieren über Thema.-->
-            <!--<xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:Theme/data:Code">-->
-            <xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:SubTheme">
-            
-            <!-- TODO: sort -->
+  <!-- Template for pdf restriction on landownership pages aka "the real output". Sorting is bit of a hack. Perhaps this whole TOC thing can -->
+  <!-- be made much simpler with better apply-templates strategy.-->
+  <xsl:template match="data:RealEstate" mode="sheet">
+    <fo:page-sequence master-reference="mainPage" id="page-sequence-id">
+      <xsl:call-template name="insertHeaderAndFooter"/>
+      <fo:flow flow-name="xsl-region-body">
+        <fo:block>
+            <xsl:for-each-group select="data:RestrictionOnLandownership" group-by="data:SubTheme">
             <!-- Wie geht das, wenn die Namen beliebig sein können? Nach Themen-Code? -->
+              <xsl:sort data-type="number" order="ascending" select="(number(data:Theme/data:Code='LandUsePlans') * 1) + (number(data:Theme/data:Code='MotorwaysProjectPlaningZones') * 2) + (number(data:Theme/data:Code='MotorwaysBuildingLines') * 3) + (number(data:Theme/data:Code='RailwaysProjectPlanningZones') * 4) + (number(data:Theme/data:Code='RailwaysBuildingLines') * 5) + (number(data:Theme/data:Code='AirportsProjectPlanningZones') * 6) + (number(data:Theme/data:Code='AirportsBuildingLines') * 7) + (number(data:Theme/data:Code='AirportsSecurityZonePlans') * 8) + (number(data:Theme/data:Code='ContaminatedSites') * 9) + (number(data:Theme/data:Code='ContaminatedMilitarySites') * 10) + (number(data:Theme/data:Code='ContaminatedCivilAviationSites') * 11) + (number(data:Theme/data:Code='ContaminatedPublicTransportSites') * 12) + (number(data:Theme/data:Code='GroundwaterProtectionZones') * 13) + (number(data:Theme/data:Code='GroundwaterProtectionSites') * 14) + (number(data:Theme/data:Code='NoiseSensitivityLevels') * 15) + (number(data:Theme/data:Code='ForestPerimeters') * 16) + (number(data:Theme/data:Code='ForestDistanceLines') * 17)"/>
 
               <fo:block-container height="13mm" background-color="transparent">
                 <fo:block id="{generate-id()}" page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
               </fo:block-container> 
-
               <fo:block-container height="105mm" background-color="gold">
                 <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm" font-family="Cadastra">Platzhalter unsichtbar</fo:block>
               </fo:block-container>            
-           
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="68mm"/>
-                <fo:table-column column-width="10mm"/>
-                <fo:table-column column-width="59mm"/>
-                <fo:table-column column-width="20mm"/>
-                <fo:table-column column-width="17mm"/>
-                <fo:table-body>
-                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm" >
-                    <fo:table-cell>
-                      <fo:block></fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block></fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="left">
-                      <fo:block font-size="6.5pt">Typ</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="right">
-                      <fo:block font-size="6.5pt">Anteil</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="right">
-                      <fo:block font-size="6.5pt">Anteil in %</fo:block>
-                    </fo:table-cell>
-                  </fo:table-row>
-
-                  <xsl:for-each-group select="current-group()" group-by="data:TypeCode">
-                  <xsl:sort order="ascending" select="data:Information/data:LocalisedText/data:Text"/>
-                    <!--<fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>-->
-                    <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm" >
+          
+              <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+                <fo:table table-layout="fixed" width="100%">
+                  <fo:table-column column-width="68mm"/>
+                  <fo:table-column column-width="10mm"/>
+                  <fo:table-column column-width="59mm"/>
+                  <fo:table-column column-width="20mm"/>
+                  <fo:table-column column-width="17mm"/>
+                  <fo:table-body>
+                    <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm" >
                       <fo:table-cell>
-                        <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Legende beteiligter Objekte</fo:block>
-                        </xsl:if>
-                        <xsl:if test="position()!=1">
-                          <fo:block></fo:block>
-                        </xsl:if>
+                        <fo:block></fo:block>
                       </fo:table-cell>
-                      <fo:table-cell display-align="center">
-                        <!-- padding="1mm" ist heuristisch -->
-                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                          <fo:external-graphic width="6mm" height="3mm" content-width="scale-to-fit" content-height="scale-to-fit" scaling="uniform" >
-                            <xsl:attribute name="src">
-                              <xsl:text>url('data:</xsl:text>
-                              <xsl:text>image/png;base64,</xsl:text>
-                              <xsl:value-of select="data:Symbol"/>
-                              <xsl:text>')</xsl:text>
-                            </xsl:attribute>
-                          </fo:external-graphic>
-                        </fo:block>
+                      <fo:table-cell>
+                        <fo:block></fo:block>
                       </fo:table-cell>
                       <fo:table-cell text-align="left">
-                        <!--<fo:block><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>-->
-                        <!-- Zum Testen der Summenbildung und Gruppierung-->
-                        <fo:block><xsl:value-of select="data:TypeCode"/></fo:block>
+                        <fo:block font-size="6.5pt">Typ</fo:block>
                       </fo:table-cell>
                       <fo:table-cell text-align="right">
-                        <xsl:if test="data:AreaShare">
-                          <fo:block line-height-shift-adjustment="disregard-shifts"><xsl:value-of select="format-number(sum(current-group()/data:AreaShare), &quot;#'###&quot;, &quot;swiss&quot;)"/> m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline></fo:block>
-                        </xsl:if>
-                        <xsl:if test="data:LengthShare">
-                          <fo:block line-height-shift-adjustment="disregard-shifts"><xsl:value-of select="format-number(sum(current-group()/data:LengthShare), &quot;#'###&quot;, &quot;swiss&quot;)"/> m</fo:block>
-                        </xsl:if>
+                        <fo:block font-size="6.5pt">Anteil</fo:block>
                       </fo:table-cell>
                       <fo:table-cell text-align="right">
-                        <fo:block><xsl:value-of select="format-number(sum(current-group()/data:PartInPercent), &quot;#'###.#&quot;, &quot;swiss&quot;)"/>%</fo:block>
+                        <fo:block font-size="6.5pt">Anteil in %</fo:block>
                       </fo:table-cell>
                     </fo:table-row>
-                  </xsl:for-each-group>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="68mm"/>
-                <fo:table-column column-width="10mm"/>
-                <fo:table-column column-width="59mm"/>
-                <fo:table-column column-width="20mm"/>
-                <fo:table-column column-width="17mm"/>
-                <fo:table-body>
-                  <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm" >
-                    <fo:table-cell>
-                      <fo:block/>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block/>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block/>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block/>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                      <fo:block/>
-                    </fo:table-cell>
-                  </fo:table-row>
-
-                  <xsl:for-each-group select="current-group()/data:Map/data:OtherLegend" group-by="data:TypeCode">
-                  <xsl:sort lang="de" order="ascending" select="data:LegendText/data:LocalisedText/data:Text"/>
-                    <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm" >
-                      <fo:table-cell>
-                        <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Übrige Legende (im sichtbaren Bereich)</fo:block>
-                        </xsl:if>
-                        <xsl:if test="position()!=1">
-                          <fo:block></fo:block>
-                        </xsl:if>
-                      </fo:table-cell>
-                      <fo:table-cell display-align="center">
-                        <!-- padding="1mm" ist heuristisch -->
-                        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                          <fo:external-graphic width="6mm" height="3mm" content-width="scale-to-fit" content-height="scale-to-fit" scaling="uniform" >
-                            <xsl:attribute name="src">
-                              <xsl:text>url('data:</xsl:text>
-                              <xsl:text>image/png;base64,</xsl:text>
-                              <xsl:value-of select="data:Symbol"/>
-                              <xsl:text>')</xsl:text>
-                            </xsl:attribute>
-                          </fo:external-graphic>
-                        </fo:block>
-                      </fo:table-cell>
-                      <fo:table-cell text-align="left">
-                        <fo:block><xsl:value-of select="data:LegendText/data:LocalisedText/data:Text"/></fo:block>
-                      </fo:table-cell>
-                      <fo:table-cell text-align="right">
-                      <fo:block></fo:block>
+                    <!-- TODO: Gruppierung prüfen -->
+                    <xsl:for-each-group select="current-group()" group-by="data:TypeCode">
+                    <xsl:sort order="ascending" select="data:Information/data:LocalisedText/data:Text"/>
+                      <!--<fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>-->
+                      <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm" >
+                        <fo:table-cell>
+                          <xsl:if test="position()=1">
+                            <fo:block font-weight="700">Legende beteiligter Objekte</fo:block>
+                          </xsl:if>
+                          <xsl:if test="position()!=1">
+                            <fo:block></fo:block>
+                          </xsl:if>
                         </fo:table-cell>
-                      <fo:table-cell text-align="right">
-                        <fo:block></fo:block>
+                        <fo:table-cell display-align="center">
+                          <!-- padding="1mm" ist heuristisch -->
+                          <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                            <fo:external-graphic width="6mm" height="3mm" content-width="scale-to-fit" content-height="scale-to-fit" scaling="uniform" >
+                              <xsl:attribute name="src">
+                                <xsl:text>url('data:</xsl:text>
+                                <xsl:text>image/png;base64,</xsl:text>
+                                <xsl:value-of select="data:Symbol"/>
+                                <xsl:text>')</xsl:text>
+                              </xsl:attribute>
+                            </fo:external-graphic>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <!-- Sind die Werte nicht falsch in Kt. NW? Hier sollte doch "Wohnen 3" o.ä. stehen. -->
+                          <fo:block><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
+                          <!-- Zum Testen der Summenbildung und Gruppierung-->
+                          <!--<fo:block><xsl:value-of select="data:TypeCode"/></fo:block>-->
+                        </fo:table-cell>
+                        <fo:table-cell text-align="right">
+                          <xsl:if test="data:AreaShare">
+                            <fo:block line-height-shift-adjustment="disregard-shifts"><xsl:value-of select="format-number(sum(current-group()/data:AreaShare), &quot;#'###&quot;, &quot;swiss&quot;)"/> m<fo:inline baseline-shift="super" font-size="60%">2</fo:inline></fo:block>
+                          </xsl:if>
+                          <xsl:if test="data:LengthShare">
+                            <fo:block line-height-shift-adjustment="disregard-shifts"><xsl:value-of select="format-number(sum(current-group()/data:LengthShare), &quot;#'###&quot;, &quot;swiss&quot;)"/> m</fo:block>
+                          </xsl:if>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="right">
+                          <fo:block><xsl:value-of select="format-number(sum(current-group()/data:PartInPercent), &quot;#'###.#&quot;, &quot;swiss&quot;)"/>%</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </xsl:for-each-group>
+                  </fo:table-body>
+                </fo:table>
+              </fo:block-container>
+
+              <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+                <fo:table table-layout="fixed" width="100%">
+                  <fo:table-column column-width="68mm"/>
+                  <fo:table-column column-width="10mm"/>
+                  <fo:table-column column-width="59mm"/>
+                  <fo:table-column column-width="20mm"/>
+                  <fo:table-column column-width="17mm"/>
+                  <fo:table-body>
+                    <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm" >
+                      <fo:table-cell>
+                        <fo:block/>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block/>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block/>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block/>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block/>
                       </fo:table-cell>
                     </fo:table-row>
-                  </xsl:for-each-group>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="68mm"/>
-                <fo:table-column column-width="106mm"/>
-                <fo:table-body>
-                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
-                      <fo:table-cell>
+                    <xsl:for-each-group select="current-group()/data:Map/data:OtherLegend" group-by="data:TypeCode">
+                    <xsl:sort lang="de" order="ascending" select="data:LegendText/data:LocalisedText/data:Text"/>
+                      <fo:table-row font-weight="400" vertical-align="middle" line-height="5mm" >
+                        <fo:table-cell>
+                          <xsl:if test="position()=1">
+                            <fo:block font-weight="700">Übrige Legende (im sichtbaren Bereich)</fo:block>
+                          </xsl:if>
+                          <xsl:if test="position()!=1">
+                            <fo:block></fo:block>
+                          </xsl:if>
+                        </fo:table-cell>
+                        <fo:table-cell display-align="center">
+                          <!-- padding="1mm" ist heuristisch -->
+                          <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                            <fo:external-graphic width="6mm" height="3mm" content-width="scale-to-fit" content-height="scale-to-fit" scaling="uniform" >
+                              <xsl:attribute name="src">
+                                <xsl:text>url('data:</xsl:text>
+                                <xsl:text>image/png;base64,</xsl:text>
+                                <xsl:value-of select="data:Symbol"/>
+                                <xsl:text>')</xsl:text>
+                              </xsl:attribute>
+                            </fo:external-graphic>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block><xsl:value-of select="data:LegendText/data:LocalisedText/data:Text"/></fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="right">
                         <fo:block></fo:block>
-                      </fo:table-cell>
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                  </fo:table-row>
-
-                  <xsl:for-each-group select="current-group()/data:Map" group-by="data:LegendAtWeb">
-                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
-                  <xsl:sort lang="de" order="descending" select="data:LegendAtWeb"/>
-                  <xsl:if test="not(normalize-space(data:LegendAtWeb)='')">
-
-                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                      <fo:table-cell>
-                        <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Vollständige Legende</fo:block>
-                        </xsl:if>
-                        <xsl:if test="position()!=1">
+                          </fo:table-cell>
+                        <fo:table-cell text-align="right">
                           <fo:block></fo:block>
-                        </xsl:if>
-                      </fo:table-cell>
-                      <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt">
-                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
-                          <xsl:attribute name="external-destination"><xsl:value-of select="data:LegendAtWeb"/></xsl:attribute>
-                          <xsl:value-of select="data:LegendAtWeb"/>
-                        </fo:basic-link>
-                        </fo:block>
-                      </fo:table-cell>
-                    </fo:table-row>
-                    </xsl:if>
-                  </xsl:for-each-group>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
-            <fo:block-container height="10mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
-              </fo:block>
-            </fo:block-container>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </xsl:for-each-group>
+                  </fo:table-body>
+                </fo:table>
+              </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="68mm"/>
-                <fo:table-column column-width="106mm"/>
-                <fo:table-body>
-                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                  </fo:table-row>
-                  <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='LegalProvision']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
-                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
-                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
-                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                      <fo:table-cell>
-                        <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Rechtsvorschriften</fo:block>
-                        </xsl:if>
-                        <xsl:if test="position()!=1">
+              <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+                <fo:table table-layout="fixed" width="100%">
+                  <fo:table-column column-width="68mm"/>
+                  <fo:table-column column-width="106mm"/>
+                  <fo:table-body>
+                    <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                        <fo:table-cell>
                           <fo:block></fo:block>
-                        </xsl:if>
-                      </fo:table-cell>
-                      <fo:table-cell display-align="center">
-                        <fo:block font-size="8.5pt">
-                          <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
-                        </fo:block>
-                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
-                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
-                          <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
-                          <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
-                        </fo:basic-link>
-                        </fo:block>
-                      </fo:table-cell>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                          <fo:block></fo:block>
+                        </fo:table-cell>
                     </fo:table-row>
-                  </xsl:for-each-group>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="68mm"/>
-                <fo:table-column column-width="106mm"/>
-                <fo:table-body>
-                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                  </fo:table-row>
-                  <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Law']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
-                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
-                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
-                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                      <fo:table-cell>
-                        <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Gesetzliche Grundlagen</fo:block>
-                        </xsl:if>
-                        <xsl:if test="position()!=1">
-                          <fo:block></fo:block>
-                        </xsl:if>
-                      </fo:table-cell>
-                      <fo:table-cell display-align="center">
-                        <fo:block font-size="8.5pt">
-                          <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
-                        </fo:block>
-                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
-                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
-                          <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
-                          <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
-                        </fo:basic-link>
-                        </fo:block>
-                      </fo:table-cell>
-                    </fo:table-row>
-                  </xsl:for-each-group>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
-            
-            <xsl:if test="current-group()/data:LegalProvisions[data:DocumentType='Hint']">
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="68mm"/>
-                <fo:table-column column-width="106mm"/>
-                <fo:table-body>
-                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                  </fo:table-row>
-                  <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Hint']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
-                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
-                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
-                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                      <fo:table-cell>
-                        <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Weitere Informationen und Hinweise</fo:block>
-                        </xsl:if>
-                        <xsl:if test="position()!=1">
-                          <fo:block></fo:block>
-                        </xsl:if>
-                      </fo:table-cell>
-                      <fo:table-cell display-align="center">
-                        <fo:block font-size="8.5pt">
-                          <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
-                        </fo:block>
-                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
-                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
-                          <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
-                          <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
-                        </fo:basic-link>
-                        </fo:block>
-                      </fo:table-cell>
-                    </fo:table-row>
-                  </xsl:for-each-group>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
-            </xsl:if>
+                    <xsl:for-each-group select="current-group()/data:Map" group-by="data:LegendAtWeb">
+                    <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
+                    <xsl:sort lang="de" order="descending" select="data:LegendAtWeb"/>
+                    <xsl:if test="not(normalize-space(data:LegendAtWeb)='')">
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
-              <fo:table table-layout="fixed" width="100%">
-                <fo:table-column column-width="68mm"/>
-                <fo:table-column column-width="106mm"/>
-                <fo:table-body>
-                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                      <fo:table-cell>
-                        <fo:block></fo:block>
-                      </fo:table-cell>
-                  </fo:table-row>
-                  <xsl:for-each-group select="current-group()/data:ResponsibleOffice" group-by="data:Name">
-                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
-                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
-                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
-                      <fo:table-cell>
-                        <xsl:if test="position()=1">
-                          <fo:block font-weight="700">Zuständige Stelle</fo:block>
-                        </xsl:if>
-                        <xsl:if test="position()!=1">
-                          <fo:block></fo:block>
-                        </xsl:if>
-                      </fo:table-cell>
-                      <fo:table-cell display-align="center">
-                        <fo:block font-size="8.5pt">
-                          <xsl:value-of select="data:Name/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
-                        </fo:block>
-                        <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
-                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
-                          <xsl:attribute name="external-destination"><xsl:value-of select="data:OfficeAtWeb"/></xsl:attribute>
-                          <xsl:value-of select="data:OfficeAtWeb"/>
-                        </fo:basic-link>
-                        </fo:block>
-                      </fo:table-cell>
-                    </fo:table-row>
-                  </xsl:for-each-group>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
-            <fo:block-container background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
-              </fo:block>
-            </fo:block-container>
-              <!-- Für das Mergen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
-              <!-- Wäre es nicht besser, wenn nach einem Sachattribut gruppiert werden kann? Bei NW nicht möglich. -->
+                      <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                        <fo:table-cell>
+                          <xsl:if test="position()=1">
+                            <fo:block font-weight="700">Vollständige Legende</fo:block>
+                          </xsl:if>
+                          <xsl:if test="position()!=1">
+                            <fo:block></fo:block>
+                          </xsl:if>
+                        </fo:table-cell>
+                        <fo:table-cell line-height="8.5pt" display-align="center">
+                          <fo:block font-size="6.5pt">
+                          <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                            <xsl:attribute name="external-destination"><xsl:value-of select="data:LegendAtWeb"/></xsl:attribute>
+                            <xsl:value-of select="data:LegendAtWeb"/>
+                          </fo:basic-link>
+                          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      </xsl:if>
+                    </xsl:for-each-group>
+                  </fo:table-body>
+                </fo:table>
+              </fo:block-container>
 
-              <!--
-              <xsl:for-each-group select="current-group()" group-by="data:Map/data:Image">
-                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
-              </xsl:for-each-group>
-              -->
+              <fo:block-container height="10mm" background-color="transparent">
+                <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                  <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+                </fo:block>
+              </fo:block-container>
+
+              <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+                <fo:table table-layout="fixed" width="100%">
+                  <fo:table-column column-width="68mm"/>
+                  <fo:table-column column-width="106mm"/>
+                  <fo:table-body>
+                    <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                        <fo:table-cell>
+                          <fo:block></fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                          <fo:block></fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='LegalProvision']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                    <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+                      <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                        <fo:table-cell>
+                          <xsl:if test="position()=1">
+                            <fo:block font-weight="700">Rechtsvorschriften</fo:block>
+                          </xsl:if>
+                          <xsl:if test="position()!=1">
+                            <fo:block></fo:block>
+                          </xsl:if>
+                        </fo:table-cell>
+                        <fo:table-cell display-align="center">
+                          <fo:block font-size="8.5pt">
+                            <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                          </fo:block>
+                          <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
+                          <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                            <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
+                            <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
+                          </fo:basic-link>
+                          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </xsl:for-each-group>
+                  </fo:table-body>
+                </fo:table>
+              </fo:block-container>
+
+              <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+                <fo:table table-layout="fixed" width="100%">
+                  <fo:table-column column-width="68mm"/>
+                  <fo:table-column column-width="106mm"/>
+                  <fo:table-body>
+                    <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                        <fo:table-cell>
+                          <fo:block></fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                          <fo:block></fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Law']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                    <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+                      <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                        <fo:table-cell>
+                          <xsl:if test="position()=1">
+                            <fo:block font-weight="700">Gesetzliche Grundlagen</fo:block>
+                          </xsl:if>
+                          <xsl:if test="position()!=1">
+                            <fo:block></fo:block>
+                          </xsl:if>
+                        </fo:table-cell>
+                        <fo:table-cell display-align="center">
+                          <fo:block font-size="8.5pt">
+                            <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                          </fo:block>
+                          <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
+                          <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                            <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
+                            <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
+                          </fo:basic-link>
+                          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </xsl:for-each-group>
+                  </fo:table-body>
+                </fo:table>
+              </fo:block-container>
+              
+              <!-- Hints müssen nicht vorhanden sein. -->
+              <xsl:if test="current-group()/data:LegalProvisions[data:DocumentType='Hint']">
+                <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+                  <fo:table table-layout="fixed" width="100%">
+                    <fo:table-column column-width="68mm"/>
+                    <fo:table-column column-width="106mm"/>
+                    <fo:table-body>
+                      <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                          <fo:table-cell>
+                            <fo:block></fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell>
+                            <fo:block></fo:block>
+                          </fo:table-cell>
+                      </fo:table-row>
+                      <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Hint']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                      <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+                        <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                          <fo:table-cell>
+                            <xsl:if test="position()=1">
+                              <fo:block font-weight="700">Weitere Informationen und Hinweise</fo:block>
+                            </xsl:if>
+                            <xsl:if test="position()!=1">
+                              <fo:block></fo:block>
+                            </xsl:if>
+                          </fo:table-cell>
+                          <fo:table-cell display-align="center">
+                            <fo:block font-size="8.5pt">
+                              <xsl:value-of select="data:Title/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                            </fo:block>
+                            <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
+                            <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                              <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
+                              <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
+                            </fo:basic-link>
+                            </fo:block>
+                          </fo:table-cell>
+                        </fo:table-row>
+                      </xsl:for-each-group>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block-container>
+              </xsl:if>
+
+              <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+                <fo:table table-layout="fixed" width="100%">
+                  <fo:table-column column-width="68mm"/>
+                  <fo:table-column column-width="106mm"/>
+                  <fo:table-body>
+                    <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                        <fo:table-cell>
+                          <fo:block></fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                          <fo:block></fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <xsl:for-each-group select="current-group()/data:ResponsibleOffice" group-by="data:Name">
+                    <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+                      <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                        <fo:table-cell>
+                          <xsl:if test="position()=1">
+                            <fo:block font-weight="700">Zuständige Stelle</fo:block>
+                          </xsl:if>
+                          <xsl:if test="position()!=1">
+                            <fo:block></fo:block>
+                          </xsl:if>
+                        </fo:table-cell>
+                        <fo:table-cell display-align="center">
+                          <fo:block font-size="8.5pt">
+                            <xsl:value-of select="data:Name/data:LocalisedText/data:Text"/><xsl:text>:</xsl:text>
+                          </fo:block>
+                          <fo:block font-size="6.5pt" line-height="8.5pt" margin-left="3mm" margin-top="-1mm">
+                          <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                            <xsl:attribute name="external-destination"><xsl:value-of select="data:OfficeAtWeb"/></xsl:attribute>
+                            <xsl:value-of select="data:OfficeAtWeb"/>
+                          </fo:basic-link>
+                          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </xsl:for-each-group>
+                  </fo:table-body>
+                </fo:table>
+              </fo:block-container>
+
+              <fo:block-container background-color="transparent">
+                <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                  <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+                </fo:block>
+              </fo:block-container>
+
             </xsl:for-each-group>
-        
-        </fo:flow>
-      </fo:page-sequence>
-
-      <xsl:apply-templates select="data:RealEstate" mode="sheet"/>
-
-    </fo:root>
-  </xsl:template>
-
-
-  <xsl:template name="insertHeaderAndFooter">
-        <fo:static-content flow-name="xsl-region-before">
-          <fo:block>
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="44mm" content-width="scale-to-fit" >
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:FederalLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="60mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic border="0pt solid black" width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:CantonalLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="95mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:MunicipalityLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:LogoPLRCadastre"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="19mm" left="0mm">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
-              </fo:block>
-            </fo:block-container>
-          </fo:block>
-        </fo:static-content>
-        <fo:static-content flow-name="xsl-region-after">
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.8pt"/>
-              </fo:block>
-              <fo:table table-layout="fixed" width="100%" margin-top="0.5mm" font-size="6.5pt" font-weight="400" font-family="Cadastra">
-                <fo:table-column column-width="50%"/>
-                <fo:table-column column-width="50%"/>
-                <fo:table-body>
-                  <fo:table-row vertical-align="bottom">
-                    <fo:table-cell vertical-align="bottom">
-                      <fo:block vertical-align="bottom">
-                        <xsl:value-of select="format-dateTime(data:CreationDate,'[D01].[M01].[Y0001]')"/><fo:inline padding-left="1em"><xsl:value-of select="format-dateTime(data:CreationDate,'[H01]:[m01]:[s01]')"/></fo:inline><fo:inline padding-left="1em"><xsl:value-of select="data:ExtractIdentifier"/></fo:inline>
-                      </fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="right">
-                      <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="page-sequence-id"/></fo:block>
-                    </fo:table-cell>
-                  </fo:table-row>
-                </fo:table-body>
-              </fo:table>
-            </fo:block-container>
-        </fo:static-content>
-</xsl:template>
- 
-<!-- 
-  <xsl:template match="data:RealEstate" mode="sheet">
-    <fo:page-sequence master-reference="mainPage" id="page-sequence-id">
-        <fo:static-content flow-name="xsl-region-before">
-          <fo:block>
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="44mm" content-width="scale-to-fit" >
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="../data:FederalLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="60mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic border="0pt solid black" width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:CantonalLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="95mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:MunicipalityLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:LogoPLRCadastre"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="19mm" left="0mm">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
-              </fo:block>
-            </fo:block-container>
-          </fo:block>
-        </fo:static-content>
-        <fo:static-content flow-name="xsl-region-after">
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.8pt"/>
-              </fo:block>
-              <fo:table table-layout="fixed" width="100%" margin-top="0.5mm" font-size="6.5pt" font-weight="400" font-family="Cadastra">
-                <fo:table-column column-width="50%"/>
-                <fo:table-column column-width="50%"/>
-                <fo:table-body>
-                  <fo:table-row vertical-align="bottom">
-                    <fo:table-cell vertical-align="bottom">
-                      <fo:block vertical-align="bottom">
-                        <xsl:value-of select="format-dateTime(data:CreationDate,'[D01].[M01].[Y0001]')"/><fo:inline padding-left="1em"><xsl:value-of select="format-dateTime(data:CreationDate,'[H01]:[m01]:[s01]')"/></fo:inline><fo:inline padding-left="1em"><xsl:value-of select="data:ExtractIdentifier"/></fo:inline>
-                      </fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="right">
-                      <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="page-sequence-id"/></fo:block>
-                    </fo:table-cell>
-                  </fo:table-row>
-                </fo:table-body>
-              </fo:table>
-
-            </fo:block-container>
-        </fo:static-content>
-
-      <fo:flow flow-name="xsl-region-body">
-        <fo:block font-family="sans-serif" font-size="22pt" text-align="center">
-          Hallo
-        </fo:block>
-        <fo:block font-family="sans-serif" font-size="12pt" text-align="justify">
-          Welt
         </fo:block>
       </fo:flow>
     </fo:page-sequence>
   </xsl:template>
--->
+
+  <!-- Template for the table of contents. Sorting is bit of a hack. Perhaps this whole TOC thing can -->
+  <!-- be made much simpler with better apply-templates strategy.-->
+  <xsl:template match="data:RealEstate" mode="toc">
+    <fo:block-container margin-bottom="10mm" font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+      <fo:table table-layout="fixed" width="100%">
+        <fo:table-column column-width="7mm"/>
+        <fo:table-column column-width="167mm"/>
+        <fo:table-body>
+          <fo:table-row vertical-align="middle">
+            <fo:table-cell>
+              <fo:block margin-top="1mm" margin-bottom="2.8mm" font-weight="700" font-size="6.5pt">Seite</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block/>
+            </fo:table-cell>
+          </fo:table-row>
+          <xsl:for-each-group select="data:RestrictionOnLandownership" group-by="data:SubTheme">
+          <xsl:sort data-type="number" order="ascending" select="(number(data:Theme/data:Code='LandUsePlans') * 1) + (number(data:Theme/data:Code='MotorwaysProjectPlaningZones') * 2) + (number(data:Theme/data:Code='MotorwaysBuildingLines') * 3) + (number(data:Theme/data:Code='RailwaysProjectPlanningZones') * 4) + (number(data:Theme/data:Code='RailwaysBuildingLines') * 5) + (number(data:Theme/data:Code='AirportsProjectPlanningZones') * 6) + (number(data:Theme/data:Code='AirportsBuildingLines') * 7) + (number(data:Theme/data:Code='AirportsSecurityZonePlans') * 8) + (number(data:Theme/data:Code='ContaminatedSites') * 9) + (number(data:Theme/data:Code='ContaminatedMilitarySites') * 10) + (number(data:Theme/data:Code='ContaminatedCivilAviationSites') * 11) + (number(data:Theme/data:Code='ContaminatedPublicTransportSites') * 12) + (number(data:Theme/data:Code='GroundwaterProtectionZones') * 13) + (number(data:Theme/data:Code='GroundwaterProtectionSites') * 14) + (number(data:Theme/data:Code='NoiseSensitivityLevels') * 15) + (number(data:Theme/data:Code='ForestPerimeters') * 16) + (number(data:Theme/data:Code='ForestDistanceLines') * 17)"/>
+            <fo:table-row line-height="6mm" border-bottom="0.2pt solid black" vertical-align="middle">
+              <fo:table-cell>
+                <fo:block>
+                  <fo:basic-link internal-destination="{generate-id(.)}">
+                    <fo:page-number-citation ref-id="{generate-id(.)}"/>
+                  </fo:basic-link>  
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block>
+                  <fo:basic-link internal-destination="{generate-id(.)}">
+                    <xsl:value-of select="data:Theme/data:Text/data:Text"/>
+                  </fo:basic-link>  
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </xsl:for-each-group>
+        </fo:table-body>
+      </fo:table>
+    </fo:block-container>
+  </xsl:template>
+
+  <xsl:template name="insertHeaderAndFooter">
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block>
+        <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="transparent">
+          <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+            <fo:external-graphic width="44mm" content-width="scale-to-fit" >
+              <xsl:attribute name="src">
+                <xsl:text>url('data:</xsl:text>
+                <xsl:text>image/png;base64,</xsl:text>
+                <xsl:value-of select="/extract:GetExtractByIdResponse/data:Extract/data:FederalLogo"/>
+                <xsl:text>')</xsl:text>
+              </xsl:attribute>
+            </fo:external-graphic>
+          </fo:block>
+        </fo:block-container>
+
+        <fo:block-container absolute-position="absolute" top="0mm" left="60mm" background-color="transparent">
+          <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+            <fo:external-graphic border="0pt solid black" width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+              <xsl:attribute name="src">
+                <xsl:text>url('data:</xsl:text>
+                <xsl:text>image/png;base64,</xsl:text>
+                <xsl:value-of select="/extract:GetExtractByIdResponse/data:Extract/data:CantonalLogo"/>
+                <xsl:text>')</xsl:text>
+              </xsl:attribute>
+            </fo:external-graphic>
+          </fo:block>
+        </fo:block-container>
+
+        <fo:block-container absolute-position="absolute" top="0mm" left="95mm" background-color="transparent">
+          <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+            <fo:external-graphic width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+              <xsl:attribute name="src">
+                <xsl:text>url('data:</xsl:text>
+                <xsl:text>image/png;base64,</xsl:text>
+                <xsl:value-of select="/extract:GetExtractByIdResponse/data:Extract/data:MunicipalityLogo"/>
+                <xsl:text>')</xsl:text>
+              </xsl:attribute>
+            </fo:external-graphic>
+          </fo:block>
+        </fo:block-container>
+
+        <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="transparent">
+          <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+            <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
+              <xsl:attribute name="src">
+                <xsl:text>url('data:</xsl:text>
+                <xsl:text>image/png;base64,</xsl:text>
+                <xsl:value-of select="/extract:GetExtractByIdResponse/data:Extract/data:LogoPLRCadastre"/>
+                <xsl:text>')</xsl:text>
+              </xsl:attribute>
+            </fo:external-graphic>
+          </fo:block>
+        </fo:block-container>
+
+        <fo:block-container absolute-position="absolute" top="19mm" left="0mm">
+          <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+            <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+          </fo:block>
+        </fo:block-container>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block-container absolute-position="absolute" top="0mm" left="0mm">
+        <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+          <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.8pt"/>
+        </fo:block>
+        <fo:table table-layout="fixed" width="100%" margin-top="0.5mm" font-size="6.5pt" font-weight="400" font-family="Cadastra">
+          <fo:table-column column-width="50%"/>
+          <fo:table-column column-width="50%"/>
+          <fo:table-body>
+            <fo:table-row vertical-align="bottom">
+              <fo:table-cell vertical-align="bottom">
+                <fo:block vertical-align="bottom">
+                  <xsl:value-of select="format-dateTime(/extract:GetExtractByIdResponse/data:Extract/data:CreationDate,'[D01].[M01].[Y0001]')"/><fo:inline padding-left="1em"><xsl:value-of select="format-dateTime(/extract:GetExtractByIdResponse/data:Extract/data:CreationDate,'[H01]:[m01]:[s01]')"/></fo:inline><fo:inline padding-left="1em"><xsl:value-of select="/extract:GetExtractByIdResponse/data:Extract/data:ExtractIdentifier"/></fo:inline>
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="right">
+                <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="page-sequence-id"/></fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+      </fo:block-container>
+    </fo:static-content>
+  </xsl:template>
+
+  <xsl:template name="insertGlossary">
+    <fo:page-sequence master-reference="mainPage" id="page-sequence-id">
+      <xsl:call-template name="insertHeaderAndFooter"/>
+      <fo:flow flow-name="xsl-region-body">
+        <fo:block>
+          <fo:block-container height="13mm" background-color="transparent">
+            <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra">Abkürzungen</fo:block>
+          </fo:block-container>            
+          <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
+            <fo:table table-layout="fixed" width="100%">
+              <fo:table-column column-width="174mm"/>
+              <fo:table-body>
+              <xsl:for-each select="data:Glossary">
+                <xsl:sort select="data:Title/data:LocalisedText/data:Text"/>
+                <fo:table-row border-bottom="0.2pt solid black" vertical-align="middle" line-height="11.5pt" >
+                  <fo:table-cell padding-top="1mm" padding-bottom="1mm">
+                    <fo:block><fo:inline font-weight="700"><xsl:value-of select="data:Title/data:LocalisedText/data:Text"/>: </fo:inline><xsl:value-of select="data:Content/data:LocalisedText/data:Text"/></fo:block>
+                  </fo:table-cell>
+                </fo:table-row>
+              </xsl:for-each>
+              </fo:table-body>
+            </fo:table>
+          </fo:block-container>
+        </fo:block>
+      </fo:flow>  
+    </fo:page-sequence>
+  </xsl:template>
 
 </xsl:stylesheet>
