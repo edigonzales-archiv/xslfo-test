@@ -954,19 +954,104 @@
                         <fo:block font-weight="700">Vollständige Legende</fo:block>
                      </fo:table-cell>
                      <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt" color="rgb(76,143,186)">https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm</fo:block>
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm">https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm</fo:basic-link>
+                        </fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                </fo:table-body>
             </fo:table>
          </fo:block-container>
-         <fo:block-container>
+         <fo:block-container height="10mm" background-color="blue">
             <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                <fo:leader leader-pattern="rule"
                           leader-length="100%"
                           rule-style="solid"
                           rule-thickness="0.2pt"/>
             </fo:block>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Vollständige Legende</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GP.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GP.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block>aaa</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GRB_anonymisiert.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GRB_anonymisiert.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block>aaa</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_Bericht_Hinweise.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_Bericht_Hinweise.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block>aaa</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19941222_BDB_anonymisiert.pdf">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19941222_BDB_anonymisiert.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block>aaa</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
          </fo:block-container>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"
@@ -1280,19 +1365,56 @@
                         <fo:block font-weight="700">Vollständige Legende</fo:block>
                      </fo:table-cell>
                      <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt" color="rgb(76,143,186)">https://www.gis-daten.ch/docs/tr/nw/legenden/oereb/nutzungsplanung/nw_zonenplan_laermempfindlichkeitsstufen.pdf</fo:block>
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="https://www.gis-daten.ch/docs/tr/nw/legenden/oereb/nutzungsplanung/nw_zonenplan_laermempfindlichkeitsstufen.pdf">https://www.gis-daten.ch/docs/tr/nw/legenden/oereb/nutzungsplanung/nw_zonenplan_laermempfindlichkeitsstufen.pdf</fo:basic-link>
+                        </fo:block>
                      </fo:table-cell>
                   </fo:table-row>
                </fo:table-body>
             </fo:table>
          </fo:block-container>
-         <fo:block-container>
+         <fo:block-container height="10mm" background-color="blue">
             <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                <fo:leader leader-pattern="rule"
                           leader-length="100%"
                           rule-style="solid"
                           rule-thickness="0.2pt"/>
             </fo:block>
+         </fo:block-container>
+         <fo:block-container font-weight="400"
+                             font-size="8.5pt"
+                             font-family="Cadastra"
+                             background-color="aqua">
+            <fo:table table-layout="fixed" width="100%">
+               <fo:table-column column-width="68mm"/>
+               <fo:table-column column-width="106mm"/>
+               <fo:table-body>
+                  <fo:table-row border-bottom="0.2pt solid black"
+                                vertical-align="middle"
+                                line-height="5mm">
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block/>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                     <fo:table-cell>
+                        <fo:block font-weight="700">Vollständige Legende</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell line-height="8.5pt" display-align="center">
+                        <fo:block font-size="6.5pt">
+                           <fo:basic-link text-decoration="none"
+                                          color="rgb(76,143,186)"
+                                          external-destination="http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
          </fo:block-container>
          <fo:block linefeed-treatment="preserve"
                    font-weight="400"

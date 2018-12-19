@@ -534,11 +534,16 @@
                           <fo:block font-weight="700">Vollständige Legende</fo:block>
                         </xsl:if>
                         <xsl:if test="position()!=1">
-                          <fo:block>aaa</fo:block>
+                          <fo:block></fo:block>
                         </xsl:if>
                       </fo:table-cell>
                       <fo:table-cell line-height="8.5pt" display-align="center">
-                        <fo:block font-size="6.5pt" color="rgb(76,143,186)"><xsl:value-of select="data:LegendAtWeb"/></fo:block>
+                        <fo:block font-size="6.5pt">
+                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                          <xsl:attribute name="external-destination"><xsl:value-of select="data:LegendAtWeb"/></xsl:attribute>
+                          <xsl:value-of select="data:LegendAtWeb"/>
+                        </fo:basic-link>
+                        </fo:block>
                       </fo:table-cell>
                     </fo:table-row>
                     </xsl:if>
@@ -546,13 +551,52 @@
                 </fo:table-body>
               </fo:table>
             </fo:block-container>
+            <fo:block-container height="10mm" background-color="blue">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+              </fo:block>
+            </fo:block-container>
 
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="68mm"/>
+                <fo:table-column column-width="106mm"/>
+                <fo:table-body>
+                  <fo:table-row  border-bottom="0.2pt solid black" vertical-align="middle" line-height="5mm">
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                      <fo:table-cell>
+                        <fo:block></fo:block>
+                      </fo:table-cell>
+                  </fo:table-row>
 
-                  <fo:block-container>
-                    <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                      <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
-                    </fo:block>
-                  </fo:block-container>
+                  <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='LegalProvision']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
+                  <!-- Wegen möglicher leeren LegendAtWeb-Elementen ist die Sortierung entscheidend bezüglich der position()-Bedingung. -->
+                  <xsl:sort lang="de" order="descending" select="data:Title/data:LocalisedText/data:Text"/>
+
+                    <fo:table-row vertical-align="middle" line-height="5mm" font-weight="400">
+                      <fo:table-cell>
+                        <xsl:if test="position()=1">
+                          <fo:block font-weight="700">Vollständige Legende</fo:block>
+                        </xsl:if>
+                        <xsl:if test="position()!=1">
+                          <fo:block>aaa</fo:block>
+                        </xsl:if>
+                      </fo:table-cell>
+                      <fo:table-cell line-height="8.5pt" display-align="center">
+                        <fo:block font-size="6.5pt">
+                        <fo:basic-link text-decoration="none" color="rgb(76,143,186)">
+                          <xsl:attribute name="external-destination"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></xsl:attribute>
+                          <xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/>
+                        </fo:basic-link>
+                        </fo:block>
+                      </fo:table-cell>
+                    </fo:table-row>
+                  </xsl:for-each-group>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
 
 
 
