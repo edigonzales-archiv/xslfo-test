@@ -290,7 +290,6 @@
             </fo:block-container>
 
             <fo:block-container>
-              <xsl:value-of select="data:RealEstate/data:Limit"/>
             <fo:block>
               <fo:footnote>
                 <fo:inline/>
@@ -350,30 +349,24 @@
             </fo:block>
             </fo:block-container>
 
-<!--
-            <xsl:for-each select="data:RealEstate/data:RestrictionOnLandownership">
-              <fo:block-container height="13mm" background-color="green">
-                <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
-                <fo:block line-height="18pt" linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
-              </fo:block-container>            
-            </xsl:for-each> 
--->
 <!-- Die grosse Frage: Nach was gruppieren? So wie es ausssieht, kann man anhand des Inhaltes des XML nicht auf das gewünschte Resultat im PDF eines Kantons schliessen, z.B. falls kein Subthema vorhanden ist, dann gruppieren über Thema.-->
             <!--<xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:Theme/data:Code">-->
             <xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:SubTheme">
+<xsl:call-template name="ivz.zeile"/>
             
             
             <!-- TODO: sort -->
+            <!-- Wie geht das, wenn die Namen beliebig sein können? Nach Themen-Code? -->
 
-              <fo:block-container height="13mm" background-color="green">
-                <fo:block page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
+              <fo:block-container height="13mm" background-color="transparent">
+                <fo:block id="{generate-id()}" page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/></fo:block>
               </fo:block-container> 
 
               <fo:block-container height="105mm" background-color="gold">
                 <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm" font-family="Cadastra">Platzhalter unsichtbar</fo:block>
               </fo:block-container>            
            
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="10mm"/>
@@ -398,8 +391,7 @@
                       <fo:block font-size="6.5pt">Anteil in %</fo:block>
                     </fo:table-cell>
                   </fo:table-row>
-              <!-- Für das Mergen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
-              <!-- Wäre es nicht besser, wenn nach einem Sachattribut gruppiert werden kann? Bei NW nicht möglich. -->
+
                   <xsl:for-each-group select="current-group()" group-by="data:TypeCode">
                   <xsl:sort order="ascending" select="data:Information/data:LocalisedText/data:Text"/>
                     <!--<fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>-->
@@ -447,7 +439,7 @@
               </fo:table>
             </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="10mm"/>
@@ -512,7 +504,7 @@
               </fo:table>
             </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="106mm"/>
@@ -554,13 +546,13 @@
                 </fo:table-body>
               </fo:table>
             </fo:block-container>
-            <fo:block-container height="10mm" background-color="blue">
+            <fo:block-container height="10mm" background-color="transparent">
               <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                 <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
               </fo:block>
             </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="106mm"/>
@@ -602,7 +594,7 @@
               </fo:table>
             </fo:block-container>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="106mm"/>
@@ -645,7 +637,7 @@
             </fo:block-container>
             
             <xsl:if test="current-group()/data:LegalProvisions[data:DocumentType='Hint']">
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="106mm"/>
@@ -688,7 +680,7 @@
             </fo:block-container>
             </xsl:if>
 
-            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="aqua">
+            <fo:block-container font-weight="400" font-size="8.5pt" font-family="Cadastra" background-color="transparent">
               <fo:table table-layout="fixed" width="100%">
                 <fo:table-column column-width="68mm"/>
                 <fo:table-column column-width="106mm"/>
@@ -734,42 +726,48 @@
                 <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
               </fo:block>
             </fo:block-container>
-
-
-      
               <!-- Für das Mergen der Bildli: es sollen keine doppelten Bildli gemerged werden. -->
               <!-- Wäre es nicht besser, wenn nach einem Sachattribut gruppiert werden kann? Bei NW nicht möglich. -->
+
+              <!--
               <xsl:for-each-group select="current-group()" group-by="data:Map/data:Image">
                 <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
               </xsl:for-each-group>
-
-              <xsl:for-each select="current-group()">
-                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra" background-color="wheat"><xsl:value-of select="data:Information/data:LocalisedText/data:Text"/></fo:block>
-              </xsl:for-each>
-
-              <fo:block linefeed-treatment="preserve" font-weight="400" font-size="11pt" font-family="Cadastra" background-color="gold"><xsl:value-of select="data:Map/data:LegendAtWeb"/></fo:block>
-
-              <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='LegalProvision']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
-                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="9pt" font-family="Cadastra" background-color="pink"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></fo:block>
-              </xsl:for-each-group>
-
-              <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Law']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
-                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="9pt" font-family="Cadastra" background-color="yellowgreen"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></fo:block>
-              </xsl:for-each-group> 
-
-
-              <xsl:for-each-group select="current-group()/data:LegalProvisions[data:DocumentType='Hint']" group-by="data:TextAtWeb/data:LocalisedText/data:Text">
-                <fo:block linefeed-treatment="preserve" font-weight="400" font-size="9pt" font-family="Cadastra" background-color="turquoise"><xsl:value-of select="data:TextAtWeb/data:LocalisedText/data:Text"/></fo:block>
-              </xsl:for-each-group> 
-
-
-
+              -->
             </xsl:for-each-group>
         
         </fo:flow>
       </fo:page-sequence>
     </fo:root>
   </xsl:template>
+
+<xsl:template name="ivz.zeile"> 
+   <fo:block text-align-last="justify"> 
+      <fo:table width="160mm"> 
+         <fo:table-column column-number="1" column-width="10mm"/>  
+         <fo:table-column column-number="2" column-width="150mm"/> 
+         <fo:table-body>
+            <fo:table-row> 
+               <fo:table-cell column-number="1">
+                  <fo:block>
+                     <xsl:number level="single" count="Abschnitt" format="1."/>  
+                  </fo:block>
+               </fo:table-cell>
+               <fo:table-cell column-number="2">
+                  <fo:block> 
+                     <xsl:value-of select="Titel"/>  
+                     <fo:inline>
+                        <fo:leader leader-pattern="dots"/> 
+                     </fo:inline>
+                     <fo:page-number-citation ref-id="{generate-id()}"/>  
+                  </fo:block>
+               </fo:table-cell>
+            </fo:table-row>
+         </fo:table-body>
+      </fo:table>
+   </fo:block>
+</xsl:template>
+
   <xsl:template match="data:Extract">
     <fo:block-container font-size="12pt" margin-left="5mm" margin-bottom="5mm">
       <fo:block>

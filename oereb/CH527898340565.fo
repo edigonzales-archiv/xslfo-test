@@ -509,8 +509,30 @@
                </fo:footnote>
             </fo:block>
          </fo:block-container>
-         <fo:block-container height="13mm" background-color="green">
-            <fo:block page-break-before="always"
+         <fo:block text-align-last="justify">
+            <fo:table width="160mm">
+               <fo:table-column column-number="1" column-width="10mm"/>
+               <fo:table-column column-number="2" column-width="150mm"/>
+               <fo:table-body>
+                  <fo:table-row>
+                     <fo:table-cell column-number="1">
+                        <fo:block>.</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell column-number="2">
+                        <fo:block>
+                           <fo:inline>
+                              <fo:leader leader-pattern="dots"/>
+                           </fo:inline>
+                           <fo:page-number-citation ref-id="d1e835"/>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block>
+         <fo:block-container height="13mm" background-color="transparent">
+            <fo:block id="d1e835"
+                      page-break-before="always"
                       line-height="18pt"
                       linefeed-treatment="preserve"
                       font-weight="700"
@@ -527,7 +549,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="10mm"/>
@@ -660,7 +682,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="10mm"/>
@@ -909,7 +931,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -939,7 +961,7 @@
                </fo:table-body>
             </fo:table>
          </fo:block-container>
-         <fo:block-container height="10mm" background-color="blue">
+         <fo:block-container height="10mm" background-color="transparent">
             <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                <fo:leader leader-pattern="rule"
                           leader-length="100%"
@@ -950,7 +972,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -987,7 +1009,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1088,7 +1110,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1125,7 +1147,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1167,90 +1189,30 @@
                           rule-thickness="0.2pt"/>
             </fo:block>
          </fo:block-container>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra">Grundnutzung Stans</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra">Flächenbezogene Festlegung (Stans)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra">Gefahrenzone (Stans)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Grundnutzung Stans</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Grundnutzung Stans</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Flächenbezogene Festlegung (Stans)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Gefahrenzone (Stans)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Grundnutzung Stans Test 23.05.218 (Kopie)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Grundnutzung Stans Test 23.05.218 (Kopie)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="gold">https://www.gis-daten.ch/docs/tr/nw/legenden/zonenplan/nw_zonenplan.htm</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="pink">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/611.1.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/611.11.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/322.2.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/331.1.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="turquoise">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Gefahrenkarte/Wichtiger_Hinweis_zu_den_Gefahrenzonen_resp_Gefahrenkarte.pdf</fo:block>
-         <fo:block-container height="13mm" background-color="green">
-            <fo:block page-break-before="always"
+         <fo:block text-align-last="justify">
+            <fo:table width="160mm">
+               <fo:table-column column-number="1" column-width="10mm"/>
+               <fo:table-column column-number="2" column-width="150mm"/>
+               <fo:table-body>
+                  <fo:table-row>
+                     <fo:table-cell column-number="1">
+                        <fo:block>.</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell column-number="2">
+                        <fo:block>
+                           <fo:inline>
+                              <fo:leader leader-pattern="dots"/>
+                           </fo:inline>
+                           <fo:page-number-citation ref-id="d1e4925"/>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block>
+         <fo:block-container height="13mm" background-color="transparent">
+            <fo:block id="d1e4925"
+                      page-break-before="always"
                       line-height="18pt"
                       linefeed-treatment="preserve"
                       font-weight="700"
@@ -1267,7 +1229,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="10mm"/>
@@ -1325,7 +1287,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="10mm"/>
@@ -1382,7 +1344,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1400,7 +1362,7 @@
                </fo:table-body>
             </fo:table>
          </fo:block-container>
-         <fo:block-container height="10mm" background-color="blue">
+         <fo:block-container height="10mm" background-color="transparent">
             <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                <fo:leader leader-pattern="rule"
                           leader-length="100%"
@@ -1411,7 +1373,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1512,7 +1474,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1565,7 +1527,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1607,57 +1569,30 @@
                           rule-thickness="0.2pt"/>
             </fo:block>
          </fo:block-container>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra">Sondernutzungsplan Obere Spichermatt</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Sondernutzungsplan Obere Spichermatt</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="gold"/>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="pink">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="pink">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19941222_BDB_anonymisiert.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="pink">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GRB_anonymisiert.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="pink">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_GP.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="pink">https://www.gis-daten.ch/docs/gisdatenag/OEREB/Sondernutzungsplan/ST/1509_Obere_Spichermatt_19940912_Bericht_Hinweise.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/611.1.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.admin.ch/ch/d/sr/7/700.de.pdf?noredirect=1</fo:block>
-         <fo:block-container height="13mm" background-color="green">
-            <fo:block page-break-before="always"
+         <fo:block text-align-last="justify">
+            <fo:table width="160mm">
+               <fo:table-column column-number="1" column-width="10mm"/>
+               <fo:table-column column-number="2" column-width="150mm"/>
+               <fo:table-body>
+                  <fo:table-row>
+                     <fo:table-cell column-number="1">
+                        <fo:block>.</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell column-number="2">
+                        <fo:block>
+                           <fo:inline>
+                              <fo:leader leader-pattern="dots"/>
+                           </fo:inline>
+                           <fo:page-number-citation ref-id="d1e6501"/>
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+         </fo:block>
+         <fo:block-container height="13mm" background-color="transparent">
+            <fo:block id="d1e6501"
+                      page-break-before="always"
                       line-height="18pt"
                       linefeed-treatment="preserve"
                       font-weight="700"
@@ -1674,7 +1609,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="10mm"/>
@@ -1732,7 +1667,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="10mm"/>
@@ -1837,7 +1772,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1867,7 +1802,7 @@
                </fo:table-body>
             </fo:table>
          </fo:block-container>
-         <fo:block-container height="10mm" background-color="blue">
+         <fo:block-container height="10mm" background-color="transparent">
             <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
                <fo:leader leader-pattern="rule"
                           leader-length="100%"
@@ -1878,7 +1813,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1915,7 +1850,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -1984,7 +1919,7 @@
          <fo:block-container font-weight="400"
                              font-size="8.5pt"
                              font-family="Cadastra"
-                             background-color="aqua">
+                             background-color="transparent">
             <fo:table table-layout="fixed" width="100%">
                <fo:table-column column-width="68mm"/>
                <fo:table-column column-width="106mm"/>
@@ -2026,40 +1961,6 @@
                           rule-thickness="0.2pt"/>
             </fo:block>
          </fo:block-container>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra">Lärmempfindlichkeitsstufen (Stans)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="wheat">Lärmempfindlichkeitsstufen (Stans)</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="11pt"
-                   font-family="Cadastra"
-                   background-color="gold">https://www.gis-daten.ch/docs/tr/nw/legenden/oereb/nutzungsplanung/nw_zonenplan_laermempfindlichkeitsstufen.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="pink">http://www.gis-daten.ch/docs/gisdatenag/OEREB/BZR/ST_Bau-_und_Zonenreglement.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/721.1.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.erlasse.ch/pdf/nw/721.11.pdf</fo:block>
-         <fo:block linefeed-treatment="preserve"
-                   font-weight="400"
-                   font-size="9pt"
-                   font-family="Cadastra"
-                   background-color="yellowgreen">http://www.admin.ch/ch/d/sr/8/814.41.de.pdf?noredirect=1</fo:block>
       </fo:flow>
    </fo:page-sequence>
 </fo:root>
