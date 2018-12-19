@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+   <fo:layout-master-set>
+      <fo:simple-page-master master-name="table"
+                             page-height="29.7cm"
+                             page-width="21cm"
+                             margin="1cm">
+         <fo:region-body column-count="1" background-color="transparent"/>
+         <fo:region-after extent="2cm"/>
+      </fo:simple-page-master>
+      <fo:simple-page-master master-name="sheet"
+                             page-height="21cm"
+                             page-width="29.7cm"
+                             margin="2cm">
+         <fo:region-body column-count="1" background-color="transparent"/>
+      </fo:simple-page-master>
+   </fo:layout-master-set>
+   <fo:page-sequence master-reference="table">
+      <fo:flow flow-name="xsl-region-body">
+         <fo:block>
+            <fo:block>
+        Must put here the table of content
+      </fo:block>
+            <fo:block>
+        Must put here the table of content
+      </fo:block>
+         </fo:block>
+      </fo:flow>
+   </fo:page-sequence>
+   <fo:page-sequence master-reference="sheet">
+      <fo:flow flow-name="xsl-region-body">
+         <fo:block font-family="sans-serif" font-size="22pt" text-align="center">John Steinbeck</fo:block>
+         <fo:block font-family="sans-serif" font-size="12pt" text-align="justify">John Ernst Steinbeck, Jr. (February 27, 1902 – December 20, 1968) was an American author of twenty-seven books, including sixteen novels, six non-fiction books
+    </fo:block>
+      </fo:flow>
+   </fo:page-sequence>
+   <fo:page-sequence master-reference="sheet">
+      <fo:flow flow-name="xsl-region-body">
+         <fo:block font-family="sans-serif" font-size="22pt" text-align="center">William Faulkner</fo:block>
+         <fo:block font-family="sans-serif" font-size="12pt" text-align="justify">William Cuthbert Faulkner (September 25, 1897 – July 6, 1962) was an American writer and Nobel Prize laureate from Oxford, Mississippi.
+    </fo:block>
+      </fo:flow>
+   </fo:page-sequence>
+</fo:root>

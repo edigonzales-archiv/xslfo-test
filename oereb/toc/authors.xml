@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<AuthorList>
+  <Author>
+    <name>John Steinbeck</name>
+    <biography>John Ernst Steinbeck, Jr. (February 27, 1902 &#x2013; December 20, 1968) was an American author of twenty-seven books, including sixteen novels, six non-fiction books
+    </biography>
+    <picture>
+      http://upload.wikimedia.org/wikipedia/commons/e/e7/John_Steinbeck_1962.jpg
+    </picture>
+  </Author>
+  <Author>
+    <name>William Faulkner</name>
+    <biography>William Cuthbert Faulkner (September 25, 1897 &#x2013; July 6, 1962) was an American writer and Nobel Prize laureate from Oxford, Mississippi.
+    </biography>
+    <picture>
+      http://upload.wikimedia.org/wikipedia/commons/f/f3/William_Faulkner_1949.jpg
+    </picture>
+  </Author>
+</AuthorList>

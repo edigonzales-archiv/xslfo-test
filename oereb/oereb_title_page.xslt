@@ -12,91 +12,7 @@
         </fo:simple-page-master>
       </fo:layout-master-set>
     <fo:page-sequence master-reference="mainPage" id="page-sequence-id">
-        <fo:static-content flow-name="xsl-region-before">
-          <fo:block>
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="44mm" content-width="scale-to-fit" >
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:FederalLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="60mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic border="0pt solid black" width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:CantonalLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="95mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:MunicipalityLogo"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="transparent">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
-                  <xsl:attribute name="src">
-                    <xsl:text>url('data:</xsl:text>
-                    <xsl:text>image/png;base64,</xsl:text>
-                    <xsl:value-of select="data:LogoPLRCadastre"/>
-                    <xsl:text>')</xsl:text>
-                  </xsl:attribute>
-                </fo:external-graphic>
-              </fo:block>
-            </fo:block-container>
-
-            <fo:block-container absolute-position="absolute" top="19mm" left="0mm">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
-              </fo:block>
-            </fo:block-container>
-          </fo:block>
-        </fo:static-content>
-        <fo:static-content flow-name="xsl-region-after">
-            <fo:block-container absolute-position="absolute" top="0mm" left="0mm">
-              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
-                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.8pt"/>
-              </fo:block>
-              <fo:table table-layout="fixed" width="100%" margin-top="0.5mm" font-size="6.5pt" font-weight="400" font-family="Cadastra">
-                <fo:table-column column-width="50%"/>
-                <fo:table-column column-width="50%"/>
-                <fo:table-body>
-                  <fo:table-row vertical-align="bottom">
-                    <fo:table-cell vertical-align="bottom">
-                      <fo:block vertical-align="bottom">
-                        <xsl:value-of select="format-dateTime(data:CreationDate,'[D01].[M01].[Y0001]')"/><fo:inline padding-left="1em"><xsl:value-of select="format-dateTime(data:CreationDate,'[H01]:[m01]:[s01]')"/></fo:inline><fo:inline padding-left="1em"><xsl:value-of select="data:ExtractIdentifier"/></fo:inline>
-                      </fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell text-align="right">
-                      <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="page-sequence-id"/></fo:block>
-                    </fo:table-cell>
-                  </fo:table-row>
-                </fo:table-body>
-              </fo:table>
-
-            </fo:block-container>
-        </fo:static-content>
+        <xsl:call-template name="insertHeaderAndFooter"/>
         <fo:flow flow-name="xsl-region-body">
           <!--font size should be 18pt but that seems to large and will lead to non-directive conform line break behaviour-->
           <fo:block-container height="28mm" background-color="transparent">
@@ -736,32 +652,199 @@
         
         </fo:flow>
       </fo:page-sequence>
+
+      <xsl:apply-templates select="data:RealEstate" mode="sheet"/>
+
     </fo:root>
   </xsl:template>
 
-  <xsl:template match="data:Extract">
-    <fo:block-container font-size="12pt" margin-left="5mm" margin-bottom="5mm">
-      <fo:block>
-           gaga
+
+  <xsl:template name="insertHeaderAndFooter">
+        <fo:static-content flow-name="xsl-region-before">
+          <fo:block>
+            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic width="44mm" content-width="scale-to-fit" >
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:FederalLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="60mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic border="0pt solid black" width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:CantonalLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="95mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:MunicipalityLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:LogoPLRCadastre"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="19mm" left="0mm">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+              </fo:block>
+            </fo:block-container>
+          </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block-container absolute-position="absolute" top="0mm" left="0mm">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.8pt"/>
+              </fo:block>
+              <fo:table table-layout="fixed" width="100%" margin-top="0.5mm" font-size="6.5pt" font-weight="400" font-family="Cadastra">
+                <fo:table-column column-width="50%"/>
+                <fo:table-column column-width="50%"/>
+                <fo:table-body>
+                  <fo:table-row vertical-align="bottom">
+                    <fo:table-cell vertical-align="bottom">
+                      <fo:block vertical-align="bottom">
+                        <xsl:value-of select="format-dateTime(data:CreationDate,'[D01].[M01].[Y0001]')"/><fo:inline padding-left="1em"><xsl:value-of select="format-dateTime(data:CreationDate,'[H01]:[m01]:[s01]')"/></fo:inline><fo:inline padding-left="1em"><xsl:value-of select="data:ExtractIdentifier"/></fo:inline>
+                      </fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell text-align="right">
+                      <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="page-sequence-id"/></fo:block>
+                    </fo:table-cell>
+                  </fo:table-row>
+                </fo:table-body>
+              </fo:table>
+            </fo:block-container>
+        </fo:static-content>
+</xsl:template>
+ 
+<!-- 
+  <xsl:template match="data:RealEstate" mode="sheet">
+    <fo:page-sequence master-reference="mainPage" id="page-sequence-id">
+        <fo:static-content flow-name="xsl-region-before">
+          <fo:block>
+            <fo:block-container absolute-position="absolute" top="0mm" left="0mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic width="44mm" content-width="scale-to-fit" >
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="../data:FederalLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="60mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic border="0pt solid black" width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:CantonalLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="95mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic width="30mm" height="13mm" scaling="uniform" content-width="scale-to-fit" content-height="scale-to-fit" text-align="center">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:MunicipalityLogo"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="0mm" left="139mm" background-color="transparent">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:external-graphic width="35mm" height="10mm" scaling="non-uniform" content-width="scale-to-fit" content-height="scale-to-fit">
+                  <xsl:attribute name="src">
+                    <xsl:text>url('data:</xsl:text>
+                    <xsl:text>image/png;base64,</xsl:text>
+                    <xsl:value-of select="data:LogoPLRCadastre"/>
+                    <xsl:text>')</xsl:text>
+                  </xsl:attribute>
+                </fo:external-graphic>
+              </fo:block>
+            </fo:block-container>
+
+            <fo:block-container absolute-position="absolute" top="19mm" left="0mm">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.2pt"/>
+              </fo:block>
+            </fo:block-container>
+          </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block-container absolute-position="absolute" top="0mm" left="0mm">
+              <fo:block font-size="0pt" padding="0mm" margin="0mm" line-height="0mm">
+                <fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="0.8pt"/>
+              </fo:block>
+              <fo:table table-layout="fixed" width="100%" margin-top="0.5mm" font-size="6.5pt" font-weight="400" font-family="Cadastra">
+                <fo:table-column column-width="50%"/>
+                <fo:table-column column-width="50%"/>
+                <fo:table-body>
+                  <fo:table-row vertical-align="bottom">
+                    <fo:table-cell vertical-align="bottom">
+                      <fo:block vertical-align="bottom">
+                        <xsl:value-of select="format-dateTime(data:CreationDate,'[D01].[M01].[Y0001]')"/><fo:inline padding-left="1em"><xsl:value-of select="format-dateTime(data:CreationDate,'[H01]:[m01]:[s01]')"/></fo:inline><fo:inline padding-left="1em"><xsl:value-of select="data:ExtractIdentifier"/></fo:inline>
+                      </fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell text-align="right">
+                      <fo:block>Seite <fo:page-number/>/<fo:page-number-citation-last ref-id="page-sequence-id"/></fo:block>
+                    </fo:table-cell>
+                  </fo:table-row>
+                </fo:table-body>
+              </fo:table>
+
+            </fo:block-container>
+        </fo:static-content>
+
+      <fo:flow flow-name="xsl-region-body">
+        <fo:block font-family="sans-serif" font-size="22pt" text-align="center">
+          Hallo
         </fo:block>
-      <fo:block>
-        <xsl:value-of select="data:CreationDate"/>
-      </fo:block>
-      <fo:block>
-        <xsl:value-of select="format-dateTime(data:CreationDate, '[D01].[M01].[Y0001]')"/>
-      </fo:block>
-      <!-- <xsl:apply-templates select="data:CreationDate"/> -->
-    </fo:block-container>
+        <fo:block font-family="sans-serif" font-size="12pt" text-align="justify">
+          Welt
+        </fo:block>
+      </fo:flow>
+    </fo:page-sequence>
   </xsl:template>
-  <!--
-    <xsl:template match="data:CreationDate">
-        <fo:block>
-            <xsl:value-of select="."/>
-        </fo:block>
-        <fo:block>
-           asdfasdfasdf
-        </fo:block>
-        
-    </xsl:template>
-    -->
+-->
+
 </xsl:stylesheet>
