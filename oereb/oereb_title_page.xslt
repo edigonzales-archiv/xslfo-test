@@ -352,8 +352,6 @@
 <!-- Die grosse Frage: Nach was gruppieren? So wie es ausssieht, kann man anhand des Inhaltes des XML nicht auf das gewünschte Resultat im PDF eines Kantons schliessen, z.B. falls kein Subthema vorhanden ist, dann gruppieren über Thema.-->
             <!--<xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:Theme/data:Code">-->
             <xsl:for-each-group select="data:RealEstate/data:RestrictionOnLandownership" group-by="data:SubTheme">
-<xsl:call-template name="ivz.zeile"/>
-            
             
             <!-- TODO: sort -->
             <!-- Wie geht das, wenn die Namen beliebig sein können? Nach Themen-Code? -->
@@ -740,33 +738,6 @@
       </fo:page-sequence>
     </fo:root>
   </xsl:template>
-
-<xsl:template name="ivz.zeile"> 
-   <fo:block text-align-last="justify"> 
-      <fo:table width="160mm"> 
-         <fo:table-column column-number="1" column-width="10mm"/>  
-         <fo:table-column column-number="2" column-width="150mm"/> 
-         <fo:table-body>
-            <fo:table-row> 
-               <fo:table-cell column-number="1">
-                  <fo:block>
-                     <xsl:number level="single" count="Abschnitt" format="1."/>  
-                  </fo:block>
-               </fo:table-cell>
-               <fo:table-cell column-number="2">
-                  <fo:block> 
-                     <xsl:value-of select="Titel"/>  
-                     <fo:inline>
-                        <fo:leader leader-pattern="dots"/> 
-                     </fo:inline>
-                     <fo:page-number-citation ref-id="{generate-id()}"/>  
-                  </fo:block>
-               </fo:table-cell>
-            </fo:table-row>
-         </fo:table-body>
-      </fo:table>
-   </fo:block>
-</xsl:template>
 
   <xsl:template match="data:Extract">
     <fo:block-container font-size="12pt" margin-left="5mm" margin-bottom="5mm">

@@ -426,18 +426,7 @@
             </fo:table>
          </fo:block-container>
          <fo:block-container>
-        
-          
-            
-              
-                
-                  2669946.002 1201975.174 2669957.242 1201968.811 2669970.055 1201991.659 2669956.843 1201999.068 2669952.844 1202001.311 2669936.32 1201981.567 2669946.002 1201975.174
-                
-              
-            
-          
-        
-      <fo:block>
+            <fo:block>
                <fo:footnote>
                   <fo:inline/>
                   <fo:footnote-body>
@@ -509,27 +498,6 @@
                </fo:footnote>
             </fo:block>
          </fo:block-container>
-         <fo:block text-align-last="justify">
-            <fo:table width="160mm">
-               <fo:table-column column-number="1" column-width="10mm"/>
-               <fo:table-column column-number="2" column-width="150mm"/>
-               <fo:table-body>
-                  <fo:table-row>
-                     <fo:table-cell column-number="1">
-                        <fo:block>.</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell column-number="2">
-                        <fo:block>
-                           <fo:inline>
-                              <fo:leader leader-pattern="dots"/>
-                           </fo:inline>
-                           <fo:page-number-citation ref-id="d1e835"/>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-               </fo:table-body>
-            </fo:table>
-         </fo:block>
          <fo:block-container height="13mm" background-color="transparent">
             <fo:block id="d1e835"
                       page-break-before="always"
@@ -1189,27 +1157,6 @@
                           rule-thickness="0.2pt"/>
             </fo:block>
          </fo:block-container>
-         <fo:block text-align-last="justify">
-            <fo:table width="160mm">
-               <fo:table-column column-number="1" column-width="10mm"/>
-               <fo:table-column column-number="2" column-width="150mm"/>
-               <fo:table-body>
-                  <fo:table-row>
-                     <fo:table-cell column-number="1">
-                        <fo:block>.</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell column-number="2">
-                        <fo:block>
-                           <fo:inline>
-                              <fo:leader leader-pattern="dots"/>
-                           </fo:inline>
-                           <fo:page-number-citation ref-id="d1e4925"/>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-               </fo:table-body>
-            </fo:table>
-         </fo:block>
          <fo:block-container height="13mm" background-color="transparent">
             <fo:block id="d1e4925"
                       page-break-before="always"
@@ -1569,27 +1516,6 @@
                           rule-thickness="0.2pt"/>
             </fo:block>
          </fo:block-container>
-         <fo:block text-align-last="justify">
-            <fo:table width="160mm">
-               <fo:table-column column-number="1" column-width="10mm"/>
-               <fo:table-column column-number="2" column-width="150mm"/>
-               <fo:table-body>
-                  <fo:table-row>
-                     <fo:table-cell column-number="1">
-                        <fo:block>.</fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell column-number="2">
-                        <fo:block>
-                           <fo:inline>
-                              <fo:leader leader-pattern="dots"/>
-                           </fo:inline>
-                           <fo:page-number-citation ref-id="d1e6501"/>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-               </fo:table-body>
-            </fo:table>
-         </fo:block>
          <fo:block-container height="13mm" background-color="transparent">
             <fo:block id="d1e6501"
                       page-break-before="always"
