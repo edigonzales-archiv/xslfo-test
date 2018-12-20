@@ -36,6 +36,8 @@ https://oereb.gis-daten.ch/oereb/extract/reduced/xml/CH907705273474
 https://oereb.gis-daten.ch/oereb/extract/reduced/xml/CH527898340565
 CH527898340565
 
+https://geoview.bl.ch/main/oereb/extract/reduced/xml/geometry/CH167807397430?WITHIMAGES
+
 https://maps.zh.ch/oerebauszug.pdf?bfs=261&nr=RI4014
 http://maps.zh.ch/oereb/extract/reduced/xml/CH607722082391?WITHIMAGES&auszug_art=1 
 
