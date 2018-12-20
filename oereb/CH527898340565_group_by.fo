@@ -75,38 +75,6 @@
                         </fo:block>
                      </fo:table-cell>
                   </fo:table-row>
-                  <fo:table-row line-height="6mm"
-                                border-bottom="0.2pt solid black"
-                                vertical-align="middle">
-                     <fo:table-cell>
-                        <fo:block>
-                           <fo:basic-link internal-destination="d1e4925">
-                              <fo:page-number-citation ref-id="d1e4925"/>
-                           </fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell>
-                        <fo:block>
-                           <fo:basic-link internal-destination="d1e4925">Gestaltungsplan (Sondernutzungsplan)</fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
-                  <fo:table-row line-height="6mm"
-                                border-bottom="0.2pt solid black"
-                                vertical-align="middle">
-                     <fo:table-cell>
-                        <fo:block>
-                           <fo:basic-link internal-destination="d1e6501">
-                              <fo:page-number-citation ref-id="d1e6501"/>
-                           </fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                     <fo:table-cell>
-                        <fo:block>
-                           <fo:basic-link internal-destination="d1e6501">Gestaltungsplan (Sondernutzungsplan)</fo:basic-link>
-                        </fo:block>
-                     </fo:table-cell>
-                  </fo:table-row>
                </fo:table-body>
             </fo:table>
          </fo:block-container>
@@ -136,48 +104,6 @@
                       font-weight="700"
                       font-size="12pt"
                       font-family="Cadastra">Nutzungsplanung kommunal (data:SubTheme)</fo:block>
-            <fo:block-container height="13mm" background-color="transparent">
-               <fo:block id="d1e6501"
-                         page-break-before="always"
-                         line-height="18pt"
-                         linefeed-treatment="preserve"
-                         font-weight="700"
-                         font-size="15pt"
-                         font-family="Cadastra">Gestaltungsplan (Sondernutzungsplan) (data:Theme/data:Text/data:Text)</fo:block>
-            </fo:block-container>
-            <fo:block-container height="105mm" background-color="gold">
-               <fo:block font-size="0pt"
-                         padding="0mm"
-                         margin="0mm"
-                         line-height="0mm"
-                         font-family="Cadastra">Platzhalter unsichtbar</fo:block>
-            </fo:block-container>
-            <fo:block line-height="18pt"
-                      linefeed-treatment="preserve"
-                      font-weight="700"
-                      font-size="12pt"
-                      font-family="Cadastra"> (data:SubTheme)</fo:block>
-            <fo:block-container height="13mm" background-color="transparent">
-               <fo:block id="d1e8077"
-                         page-break-before="always"
-                         line-height="18pt"
-                         linefeed-treatment="preserve"
-                         font-weight="700"
-                         font-size="15pt"
-                         font-family="Cadastra">Lärmempfindlichkeitsstufen (in Nutzungszonen) (data:Theme/data:Text/data:Text)</fo:block>
-            </fo:block-container>
-            <fo:block-container height="105mm" background-color="gold">
-               <fo:block font-size="0pt"
-                         padding="0mm"
-                         margin="0mm"
-                         line-height="0mm"
-                         font-family="Cadastra">Platzhalter unsichtbar</fo:block>
-            </fo:block-container>
-            <fo:block line-height="18pt"
-                      linefeed-treatment="preserve"
-                      font-weight="700"
-                      font-size="12pt"
-                      font-family="Cadastra"> (data:SubTheme)</fo:block>
          </fo:block>
       </fo:flow>
    </fo:page-sequence>

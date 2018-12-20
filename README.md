@@ -37,6 +37,7 @@ https://oereb.gis-daten.ch/oereb/extract/reduced/xml/CH527898340565
 CH527898340565
 
 https://geoview.bl.ch/main/oereb/extract/reduced/xml/geometry/CH167807397430?WITHIMAGES
+https://geoview.bl.ch/main/oereb/extract/reduced/xml/geometry/CH567107399166?WITHIMAGES
 
 https://maps.zh.ch/oerebauszug.pdf?bfs=261&nr=RI4014
 http://maps.zh.ch/oereb/extract/reduced/xml/CH607722082391?WITHIMAGES&auszug_art=1 
@@ -48,6 +49,10 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH907705273474.xml -xsl:
 (Zwei Grundnutzungstypen -> wegen Distinct)
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH527898340565.xml -xsl:oereb_title_page.xslt -o:CH527898340565.fo
 ../../../apps/fop-2.3/fop/fop -fo CH527898340565.fo -pdf CH527898340565_.pdf -c fop.xconf
+
+java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH527898340565_group_by.xml -xsl:oereb_group_by.xslt -o:CH527898340565_group_by.fo
+../../../apps/fop-2.3/fop/fop -fo CH527898340565_group_by.fo -pdf CH527898340565_group_by.pdf -c fop.xconf
+
 
 ```
 
