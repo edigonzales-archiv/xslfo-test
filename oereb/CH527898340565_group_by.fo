@@ -45,7 +45,64 @@
       <fo:flow flow-name="xsl-region-body">
          <fo:block>
             <fo:block-container height="13mm" background-color="transparent">
-               <fo:block id="d1e470"
+               <fo:block id="d1e310"
+                         page-break-before="always"
+                         line-height="18pt"
+                         linefeed-treatment="preserve"
+                         font-weight="700"
+                         font-size="15pt"
+                         font-family="Cadastra">Nutzungsplanung (kantonal/kommunal) (data:Theme/data:Text/data:Text)</fo:block>
+            </fo:block-container>
+            <fo:block-container height="105mm" background-color="gold">
+               <fo:block font-size="0pt"
+                         padding="0mm"
+                         margin="0mm"
+                         line-height="0mm"
+                         font-family="Cadastra">Platzhalter unsichtbar</fo:block>
+            </fo:block-container>
+            <fo:block line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="400"
+                      font-size="12pt"
+                      font-family="Cadastra">Es hat SubThemes</fo:block>
+            <fo:block line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="12pt"
+                      font-family="Cadastra">Nutzungsplanung kommunal (data:SubTheme)</fo:block>
+            <fo:block line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="12pt"
+                      font-family="Cadastra">Nutzungsplanung kantonal (data:SubTheme)</fo:block>
+            <fo:block-container height="13mm" background-color="transparent">
+               <fo:block id="d1e406"
+                         page-break-before="always"
+                         line-height="18pt"
+                         linefeed-treatment="preserve"
+                         font-weight="700"
+                         font-size="15pt"
+                         font-family="Cadastra">MotorwaysProjectPlaningZones (data:Theme/data:Text/data:Text)</fo:block>
+            </fo:block-container>
+            <fo:block-container height="105mm" background-color="gold">
+               <fo:block font-size="0pt"
+                         padding="0mm"
+                         margin="0mm"
+                         line-height="0mm"
+                         font-family="Cadastra">Platzhalter unsichtbar</fo:block>
+            </fo:block-container>
+            <fo:block line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="400"
+                      font-size="12pt"
+                      font-family="Cadastra">Es hat SubThemes</fo:block>
+            <fo:block line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="700"
+                      font-size="12pt"
+                      font-family="Cadastra">MotorwaysProjectPlaningZones (data:SubTheme)</fo:block>
+            <fo:block-container height="13mm" background-color="transparent">
+               <fo:block id="d1e454"
                          page-break-before="always"
                          line-height="18pt"
                          linefeed-treatment="preserve"
@@ -60,6 +117,32 @@
                          line-height="0mm"
                          font-family="Cadastra">Platzhalter unsichtbar</fo:block>
             </fo:block-container>
+            <fo:block line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="400"
+                      font-size="12pt"
+                      font-family="Cadastra">Es hat keine SubThemes</fo:block>
+            <fo:block-container height="13mm" background-color="transparent">
+               <fo:block id="d1e502"
+                         page-break-before="always"
+                         line-height="18pt"
+                         linefeed-treatment="preserve"
+                         font-weight="700"
+                         font-size="15pt"
+                         font-family="Cadastra">ForestDistanceLines (data:Theme/data:Text/data:Text)</fo:block>
+            </fo:block-container>
+            <fo:block-container height="105mm" background-color="gold">
+               <fo:block font-size="0pt"
+                         padding="0mm"
+                         margin="0mm"
+                         line-height="0mm"
+                         font-family="Cadastra">Platzhalter unsichtbar</fo:block>
+            </fo:block-container>
+            <fo:block line-height="18pt"
+                      linefeed-treatment="preserve"
+                      font-weight="400"
+                      font-size="12pt"
+                      font-family="Cadastra">Es hat keine SubThemes</fo:block>
          </fo:block>
       </fo:flow>
    </fo:page-sequence>

@@ -47,14 +47,9 @@
     <fo:page-sequence master-reference="mainPage" id="page-sequence-id">
       <fo:flow flow-name="xsl-region-body">
         <fo:block>
-            <xsl:for-each-group select="data:RestrictionOnLandownership" group-by="data:Subtheme">
+            <xsl:for-each-group select="data:RestrictionOnLandownership" group-by="data:Theme">
             <!-- Wie geht das, wenn die Namen beliebig sein können? Nach Themen-Code? -->
               <xsl:sort data-type="number" order="ascending" select="(number(data:Theme/data:Code='LandUsePlans') * 1) + (number(data:Theme/data:Code='MotorwaysProjectPlaningZones') * 2) + (number(data:Theme/data:Code='MotorwaysBuildingLines') * 3) + (number(data:Theme/data:Code='RailwaysProjectPlanningZones') * 4) + (number(data:Theme/data:Code='RailwaysBuildingLines') * 5) + (number(data:Theme/data:Code='AirportsProjectPlanningZones') * 6) + (number(data:Theme/data:Code='AirportsBuildingLines') * 7) + (number(data:Theme/data:Code='AirportsSecurityZonePlans') * 8) + (number(data:Theme/data:Code='ContaminatedSites') * 9) + (number(data:Theme/data:Code='ContaminatedMilitarySites') * 10) + (number(data:Theme/data:Code='ContaminatedCivilAviationSites') * 11) + (number(data:Theme/data:Code='ContaminatedPublicTransportSites') * 12) + (number(data:Theme/data:Code='GroundwaterProtectionZones') * 13) + (number(data:Theme/data:Code='GroundwaterProtectionSites') * 14) + (number(data:Theme/data:Code='NoiseSensitivityLevels') * 15) + (number(data:Theme/data:Code='ForestPerimeters') * 16) + (number(data:Theme/data:Code='ForestDistanceLines') * 17)"/>
-
-
-
-
-
               <fo:block-container height="13mm" background-color="transparent">
                 <fo:block id="{generate-id()}" page-break-before="always" line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="15pt" font-family="Cadastra"><xsl:value-of select="data:Theme/data:Text/data:Text"/> (data:Theme/data:Text/data:Text)</fo:block>
               </fo:block-container> 
@@ -63,9 +58,21 @@
               </fo:block-container>            
 
 
-              <xsl:for-each select="data:SubTheme"> 
+              <xsl:if test="current-group()/data:SubTheme">
+                <fo:block line-height="18pt" linefeed-treatment="preserve" font-weight="400" font-size="12pt" font-family="Cadastra">Es hat SubThemes</fo:block>
+              </xsl:if>
+
+              <xsl:if test="not(current-group()/data:SubTheme)">
+                <fo:block line-height="18pt" linefeed-treatment="preserve" font-weight="400" font-size="12pt" font-family="Cadastra">Es hat keine SubThemes</fo:block>
+              </xsl:if>
+
+
+              <xsl:for-each select="current-group()/data:SubTheme"> 
                 <fo:block line-height="18pt" linefeed-treatment="preserve" font-weight="700" font-size="12pt" font-family="Cadastra"><xsl:value-of select="."/> (data:SubTheme)</fo:block>
               </xsl:for-each>
+
+
+
           
 
             </xsl:for-each-group>
