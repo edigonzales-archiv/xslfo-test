@@ -53,6 +53,8 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH527898340565.xml -xsl:
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH527898340565_group_by.xml -xsl:oereb_group_by.xslt -o:CH527898340565_group_by.fo
 ../../../apps/fop-2.3/fop/fop -fo CH527898340565_group_by.fo -pdf CH527898340565_group_by.pdf -c fop.xconf
 
+java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:BL/CH567107399166_geometry_images.xml -xsl:oereb_title_page_bl.xslt -o:CH567107399166_geometry_images.fo
+../../../apps/fop-2.3/fop/fop -fo CH567107399166_geometry_images.fo -pdf CH567107399166_geometry_images.pdf -c fop.xconf
 
 ```
 
