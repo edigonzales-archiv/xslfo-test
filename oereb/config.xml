@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<configuration xmlns="http://saxon.sf.net/ns/configuration" edition="HE" label="Some label">
+  <global allowExternalFunctions="true" allowMultiThreading="true" />
+  <resources>
+    <extensionFunction>ch.so.agi.oereb.pdf4oereb.saxon.ext.URLDecoder</extensionFunction>
+  </resources>
+</configuration>

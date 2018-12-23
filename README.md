@@ -57,6 +57,12 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:BL/CH567107399166_geomet
 
 ```
 
+
+```
+java -cp "saxon9he.jar:pdf4oereb.jar" net.sf.saxon.Transform -t -TJ -xsl:oereb_extract.xslt -s:CH567107399166_geometry_images.xml -o:fubar.fo -config:config.xml
+```
+
+
 ## Distinct-Problematik
 
 Eine Lösung ist via distinct-values(current-group()/.....). Das ist aber mühsam, weil dann nicht ein Node verfügbar ist, sondern nur der AtomicValue.
