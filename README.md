@@ -40,6 +40,10 @@ https://geoview.bl.ch/main/oereb/extract/reduced/xml/geometry/CH567107399166?WIT
 
 https://maps.zh.ch/oerebauszug.pdf?bfs=261&nr=RI4014
 http://maps.zh.ch/oereb/extract/reduced/xml/CH607722082391?WITHIMAGES&auszug_art=1 
+http://maps.zh.ch/oereb/extract/reduced/xml/geometry/CH607722082391?WITHIMAGES&auszug_art=1
+http://maps.zh.ch/oereb/extract/reduced/xml/geometry/CH282399917939?auszug_art=1
+
+https://www.vs.ch/de/web/egeo/cadastre_rdppf
 
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH907705273474.xml -xsl:oereb_title_page.xslt -o:CH907705273474.fo
 ../../../apps/fop-2.3/fop/fop -fo CH907705273474.fo -pdf CH907705273474_.pdf -c fop.xconf
@@ -55,6 +59,7 @@ java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:CH527898340565_group_by.
 java -jar /Users/stefan/apps/saxonHE990/saxon9he.jar -s:BL/CH567107399166_geometry_images.xml -xsl:oereb_title_page_bl.xslt -o:CH567107399166_geometry_images.fo
 ../../../apps/fop-2.3/fop/fop -fo CH567107399166_geometry_images.fo -pdf CH567107399166_geometry_images.pdf -c fop.xconf
 
+../apps/fop-2.3/fop/fop -fo CH567107399166_geometry_images_png.fo -pdf CH567107399166_geometry_images_png.pdf -c fop.xconf
 ```
 
 
